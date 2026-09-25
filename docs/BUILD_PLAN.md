@@ -64,21 +64,21 @@ Overall progress should be reviewed at the end of each work session.
 
 ## 0.3 Base Project Structure
 
-- [ ] Create `components/`
-- [ ] Create `components/ui/`
-- [ ] Create `components/forms/`
-- [ ] Create `components/tables/`
-- [ ] Create `components/layout/`
-- [ ] Create `features/`
+- [x] Create `components/`
+- [x] Create `components/ui/`
+- [x] Create `components/forms/`
+- [x] Create `components/tables/`
+- [x] Create `components/layout/`
+- [x] Create `features/`
 - [x] Create `lib/`
-- [ ] Create `schemas/`
-- [ ] Create `services/`
-- [ ] Create `types/`
-- [ ] Create `utils/`
+- [x] Create `schemas/`
+- [x] Create `services/`
+- [x] Create `types/`
+- [x] Create `utils/`
 
 ### Stage 0 status
 
-**Current:** In progress
+**Current:** Complete
 
 ---
 
@@ -101,11 +101,11 @@ Overall progress should be reviewed at the end of each work session.
 - [x] Configure Prisma
 - [x] Create `lib/prisma.ts`
 - [x] Generate Prisma Client
-- [ ] Run `npx prisma db pull` after final schema verification
-- [ ] Review introspected Prisma schema
-- [ ] Run `npx prisma generate` after introspection
-- [ ] Test one simple Prisma query
-- [ ] Confirm app can read database data
+- [x] Run `npx prisma db pull` after final schema verification
+- [x] Review introspected Prisma schema
+- [x] Run `npx prisma generate` after introspection
+- [x] Test one simple Prisma query
+- [x] Confirm app can read database data
 
 ## 1.3 Core Database Verification
 
@@ -128,19 +128,19 @@ Verify tables:
 
 Verify core constraints:
 
-- [ ] SKU unique per store
-- [ ] barcode unique per store
-- [ ] sale number unique per store
-- [ ] product → store FK
-- [ ] purchase → supplier FK
-- [ ] purchase item → product FK
-- [ ] sale → customer FK
-- [ ] inventory movement → product FK
-- [ ] credit ledger → customer FK
+- [x] SKU unique per store
+- [x] barcode unique per store
+- [x] sale number unique per store
+- [x] product → store FK
+- [x] purchase → supplier FK
+- [x] purchase item → product FK
+- [x] sale → customer FK
+- [x] inventory movement → product FK
+- [x] credit ledger → customer FK
 
 ### Stage 1 status
 
-**Current:** Mostly complete
+**Current:** Complete
 
 ---
 
@@ -151,36 +151,36 @@ Verify core constraints:
 - [x] Create `lib/supabase.ts`
 - [x] Configure Supabase URL
 - [x] Configure publishable key
-- [ ] Verify browser Supabase client
+- [x] Verify browser Supabase client
 
 ## 2.2 React Query
 
-- [ ] Create `lib/query-client.ts`
-- [ ] Add `QueryClientProvider` in `_app.tsx`
-- [ ] Define query-key conventions
-- [ ] Verify sample query
-- [ ] Verify mutation invalidation
+- [x] Create `lib/query-client.ts`
+- [x] Add `QueryClientProvider` in `_app.tsx`
+- [x] Define query-key conventions
+- [x] Verify sample query
+- [x] Verify mutation invalidation
 
 ## 2.3 API Foundation
 
-- [ ] Define success response shape
-- [ ] Define error response shape
-- [ ] Create API error helper
-- [ ] Create method validation helper
-- [ ] Create server-side auth helper
-- [ ] Create store-membership helper
-- [ ] Create reusable Zod validation helper
+- [x] Define success response shape
+- [x] Define error response shape
+- [x] Create API error helper
+- [x] Create method validation helper
+- [x] Create server-side auth helper
+- [x] Create store-membership helper
+- [x] Create reusable Zod validation helper
 
 ## 2.4 Health Endpoint
 
-- [ ] Create `/api/health`
-- [ ] Return app status
-- [ ] Add database connectivity check
-- [ ] Test locally
+- [x] Create `/api/health`
+- [x] Return app status
+- [x] Add database connectivity check
+- [x] Test locally
 
 ### Stage 2 status
 
-**Current:** Not started / partial
+**Current:** Complete
 
 ---
 

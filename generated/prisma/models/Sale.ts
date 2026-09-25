@@ -328,12 +328,12 @@ export type SaleWhereInput = {
   createdById?: Prisma.StringFilter<"Sale"> | string
   createdAt?: Prisma.DateTimeFilter<"Sale"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Sale"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  customer?: Prisma.XOR<Prisma.CustomerNullableScalarRelationFilter, Prisma.CustomerWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  items?: Prisma.SaleItemListRelationFilter
-  stockMoves?: Prisma.InventoryMovementListRelationFilter
   creditEntries?: Prisma.CreditLedgerEntryListRelationFilter
+  stockMoves?: Prisma.InventoryMovementListRelationFilter
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  customer?: Prisma.XOR<Prisma.CustomerNullableScalarRelationFilter, Prisma.CustomerWhereInput> | null
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  items?: Prisma.SaleItemListRelationFilter
 }
 
 export type SaleOrderByWithRelationInput = {
@@ -354,12 +354,12 @@ export type SaleOrderByWithRelationInput = {
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
-  customer?: Prisma.CustomerOrderByWithRelationInput
-  createdBy?: Prisma.UserOrderByWithRelationInput
-  items?: Prisma.SaleItemOrderByRelationAggregateInput
-  stockMoves?: Prisma.InventoryMovementOrderByRelationAggregateInput
   creditEntries?: Prisma.CreditLedgerEntryOrderByRelationAggregateInput
+  stockMoves?: Prisma.InventoryMovementOrderByRelationAggregateInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
+  customer?: Prisma.CustomerOrderByWithRelationInput
+  store?: Prisma.StoreOrderByWithRelationInput
+  items?: Prisma.SaleItemOrderByRelationAggregateInput
 }
 
 export type SaleWhereUniqueInput = Prisma.AtLeast<{
@@ -384,12 +384,12 @@ export type SaleWhereUniqueInput = Prisma.AtLeast<{
   createdById?: Prisma.StringFilter<"Sale"> | string
   createdAt?: Prisma.DateTimeFilter<"Sale"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Sale"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  customer?: Prisma.XOR<Prisma.CustomerNullableScalarRelationFilter, Prisma.CustomerWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  items?: Prisma.SaleItemListRelationFilter
-  stockMoves?: Prisma.InventoryMovementListRelationFilter
   creditEntries?: Prisma.CreditLedgerEntryListRelationFilter
+  stockMoves?: Prisma.InventoryMovementListRelationFilter
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  customer?: Prisma.XOR<Prisma.CustomerNullableScalarRelationFilter, Prisma.CustomerWhereInput> | null
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  items?: Prisma.SaleItemListRelationFilter
 }, "id" | "storeId_saleNumber">
 
 export type SaleOrderByWithAggregationInput = {
@@ -455,12 +455,12 @@ export type SaleCreateInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateInput = {
@@ -481,9 +481,9 @@ export type SaleUncheckedCreateInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUpdateInput = {
@@ -501,12 +501,12 @@ export type SaleUpdateInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateInput = {
@@ -527,9 +527,9 @@ export type SaleUncheckedUpdateInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleCreateManyInput = {
@@ -889,11 +889,11 @@ export type SaleCreateWithoutStoreInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateWithoutStoreInput = {
@@ -913,9 +913,9 @@ export type SaleUncheckedCreateWithoutStoreInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutStoreInput = {
@@ -982,11 +982,11 @@ export type SaleCreateWithoutCreatedByInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateWithoutCreatedByInput = {
@@ -1006,9 +1006,9 @@ export type SaleUncheckedCreateWithoutCreatedByInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutCreatedByInput = {
@@ -1052,11 +1052,11 @@ export type SaleCreateWithoutCustomerInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateWithoutCustomerInput = {
@@ -1076,9 +1076,9 @@ export type SaleUncheckedCreateWithoutCustomerInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutCustomerInput = {
@@ -1122,11 +1122,11 @@ export type SaleCreateWithoutItemsInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
 }
 
 export type SaleUncheckedCreateWithoutItemsInput = {
@@ -1147,8 +1147,8 @@ export type SaleUncheckedCreateWithoutItemsInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutItemsInput = {
@@ -1182,11 +1182,11 @@ export type SaleUpdateWithoutItemsInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutItemsInput = {
@@ -1207,8 +1207,8 @@ export type SaleUncheckedUpdateWithoutItemsInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleCreateWithoutStockMovesInput = {
@@ -1226,11 +1226,11 @@ export type SaleCreateWithoutStockMovesInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateWithoutStockMovesInput = {
@@ -1251,8 +1251,8 @@ export type SaleUncheckedCreateWithoutStockMovesInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutStockMovesInput = {
@@ -1286,11 +1286,11 @@ export type SaleUpdateWithoutStockMovesInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutStockMovesInput = {
@@ -1311,8 +1311,8 @@ export type SaleUncheckedUpdateWithoutStockMovesInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleCreateWithoutCreditEntriesInput = {
@@ -1330,11 +1330,11 @@ export type SaleCreateWithoutCreditEntriesInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutSalesInput
-  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
-  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
   stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutSaleInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesInput
+  customer?: Prisma.CustomerCreateNestedOneWithoutSalesInput
+  store: Prisma.StoreCreateNestedOneWithoutSalesInput
+  items?: Prisma.SaleItemCreateNestedManyWithoutSaleInput
 }
 
 export type SaleUncheckedCreateWithoutCreditEntriesInput = {
@@ -1355,8 +1355,8 @@ export type SaleUncheckedCreateWithoutCreditEntriesInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
   stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutSaleInput
+  items?: Prisma.SaleItemUncheckedCreateNestedManyWithoutSaleInput
 }
 
 export type SaleCreateOrConnectWithoutCreditEntriesInput = {
@@ -1390,11 +1390,11 @@ export type SaleUpdateWithoutCreditEntriesInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
   stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutCreditEntriesInput = {
@@ -1415,8 +1415,8 @@ export type SaleUncheckedUpdateWithoutCreditEntriesInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
   stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleCreateManyStoreInput = {
@@ -1453,11 +1453,11 @@ export type SaleUpdateWithoutStoreInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutStoreInput = {
@@ -1477,9 +1477,9 @@ export type SaleUncheckedUpdateWithoutStoreInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateManyWithoutStoreInput = {
@@ -1535,11 +1535,11 @@ export type SaleUpdateWithoutCreatedByInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  customer?: Prisma.CustomerUpdateOneWithoutSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutCreatedByInput = {
@@ -1559,9 +1559,9 @@ export type SaleUncheckedUpdateWithoutCreatedByInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateManyWithoutCreatedByInput = {
@@ -1617,11 +1617,11 @@ export type SaleUpdateWithoutCustomerInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
-  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutSaleNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutSalesNestedInput
+  items?: Prisma.SaleItemUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateWithoutCustomerInput = {
@@ -1641,9 +1641,9 @@ export type SaleUncheckedUpdateWithoutCustomerInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
   creditEntries?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutSaleNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutSaleNestedInput
+  items?: Prisma.SaleItemUncheckedUpdateManyWithoutSaleNestedInput
 }
 
 export type SaleUncheckedUpdateManyWithoutCustomerInput = {
@@ -1671,15 +1671,15 @@ export type SaleUncheckedUpdateManyWithoutCustomerInput = {
  */
 
 export type SaleCountOutputType = {
-  items: number
-  stockMoves: number
   creditEntries: number
+  stockMoves: number
+  items: number
 }
 
 export type SaleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  items?: boolean | SaleCountOutputTypeCountItemsArgs
-  stockMoves?: boolean | SaleCountOutputTypeCountStockMovesArgs
   creditEntries?: boolean | SaleCountOutputTypeCountCreditEntriesArgs
+  stockMoves?: boolean | SaleCountOutputTypeCountStockMovesArgs
+  items?: boolean | SaleCountOutputTypeCountItemsArgs
 }
 
 /**
@@ -1695,8 +1695,8 @@ export type SaleCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * SaleCountOutputType without action
  */
-export type SaleCountOutputTypeCountItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SaleItemWhereInput
+export type SaleCountOutputTypeCountCreditEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CreditLedgerEntryWhereInput
 }
 
 /**
@@ -1709,8 +1709,8 @@ export type SaleCountOutputTypeCountStockMovesArgs<ExtArgs extends runtime.Types
 /**
  * SaleCountOutputType without action
  */
-export type SaleCountOutputTypeCountCreditEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CreditLedgerEntryWhereInput
+export type SaleCountOutputTypeCountItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SaleItemWhereInput
 }
 
 
@@ -1732,12 +1732,12 @@ export type SaleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   createdById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  items?: boolean | Prisma.Sale$itemsArgs<ExtArgs>
-  stockMoves?: boolean | Prisma.Sale$stockMovesArgs<ExtArgs>
   creditEntries?: boolean | Prisma.Sale$creditEntriesArgs<ExtArgs>
+  stockMoves?: boolean | Prisma.Sale$stockMovesArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  items?: boolean | Prisma.Sale$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.SaleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["sale"]>
 
@@ -1759,9 +1759,9 @@ export type SaleSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   createdById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["sale"]>
 
 export type SaleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1782,9 +1782,9 @@ export type SaleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   createdById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["sale"]>
 
 export type SaleSelectScalar = {
@@ -1809,34 +1809,34 @@ export type SaleSelectScalar = {
 
 export type SaleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "customerId" | "saleNumber" | "saleDate" | "status" | "paymentStatus" | "paymentMethod" | "subtotal" | "discount" | "tax" | "total" | "amountPaid" | "notes" | "createdById" | "createdAt" | "updatedAt", ExtArgs["result"]["sale"]>
 export type SaleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  items?: boolean | Prisma.Sale$itemsArgs<ExtArgs>
-  stockMoves?: boolean | Prisma.Sale$stockMovesArgs<ExtArgs>
   creditEntries?: boolean | Prisma.Sale$creditEntriesArgs<ExtArgs>
+  stockMoves?: boolean | Prisma.Sale$stockMovesArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  items?: boolean | Prisma.Sale$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.SaleCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SaleIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type SaleIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  customer?: boolean | Prisma.Sale$customerArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 
 export type $SalePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Sale"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
-    customer: Prisma.$CustomerPayload<ExtArgs> | null
-    createdBy: Prisma.$UserPayload<ExtArgs>
-    items: Prisma.$SaleItemPayload<ExtArgs>[]
-    stockMoves: Prisma.$InventoryMovementPayload<ExtArgs>[]
     creditEntries: Prisma.$CreditLedgerEntryPayload<ExtArgs>[]
+    stockMoves: Prisma.$InventoryMovementPayload<ExtArgs>[]
+    createdBy: Prisma.$UserPayload<ExtArgs>
+    customer: Prisma.$CustomerPayload<ExtArgs> | null
+    store: Prisma.$StorePayload<ExtArgs>
+    items: Prisma.$SaleItemPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2250,12 +2250,12 @@ readonly fields: SaleFieldRefs;
  */
 export interface Prisma__SaleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  customer<T extends Prisma.Sale$customerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$customerArgs<ExtArgs>>): Prisma.Prisma__CustomerClient<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  items<T extends Prisma.Sale$itemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$itemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SaleItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  stockMoves<T extends Prisma.Sale$stockMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$stockMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InventoryMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   creditEntries<T extends Prisma.Sale$creditEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$creditEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CreditLedgerEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stockMoves<T extends Prisma.Sale$stockMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$stockMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InventoryMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  customer<T extends Prisma.Sale$customerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$customerArgs<ExtArgs>>): Prisma.Prisma__CustomerClient<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  items<T extends Prisma.Sale$itemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Sale$itemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SaleItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2698,6 +2698,54 @@ export type SaleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
+ * Sale.creditEntries
+ */
+export type Sale$creditEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the CreditLedgerEntry
+   */
+  select?: Prisma.CreditLedgerEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the CreditLedgerEntry
+   */
+  omit?: Prisma.CreditLedgerEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CreditLedgerEntryInclude<ExtArgs> | null
+  where?: Prisma.CreditLedgerEntryWhereInput
+  orderBy?: Prisma.CreditLedgerEntryOrderByWithRelationInput | Prisma.CreditLedgerEntryOrderByWithRelationInput[]
+  cursor?: Prisma.CreditLedgerEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CreditLedgerEntryScalarFieldEnum | Prisma.CreditLedgerEntryScalarFieldEnum[]
+}
+
+/**
+ * Sale.stockMoves
+ */
+export type Sale$stockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InventoryMovement
+   */
+  select?: Prisma.InventoryMovementSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InventoryMovement
+   */
+  omit?: Prisma.InventoryMovementOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InventoryMovementInclude<ExtArgs> | null
+  where?: Prisma.InventoryMovementWhereInput
+  orderBy?: Prisma.InventoryMovementOrderByWithRelationInput | Prisma.InventoryMovementOrderByWithRelationInput[]
+  cursor?: Prisma.InventoryMovementWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InventoryMovementScalarFieldEnum | Prisma.InventoryMovementScalarFieldEnum[]
+}
+
+/**
  * Sale.customer
  */
 export type Sale$customerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2738,54 +2786,6 @@ export type Sale$itemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
   take?: number
   skip?: number
   distinct?: Prisma.SaleItemScalarFieldEnum | Prisma.SaleItemScalarFieldEnum[]
-}
-
-/**
- * Sale.stockMoves
- */
-export type Sale$stockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InventoryMovement
-   */
-  select?: Prisma.InventoryMovementSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InventoryMovement
-   */
-  omit?: Prisma.InventoryMovementOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InventoryMovementInclude<ExtArgs> | null
-  where?: Prisma.InventoryMovementWhereInput
-  orderBy?: Prisma.InventoryMovementOrderByWithRelationInput | Prisma.InventoryMovementOrderByWithRelationInput[]
-  cursor?: Prisma.InventoryMovementWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InventoryMovementScalarFieldEnum | Prisma.InventoryMovementScalarFieldEnum[]
-}
-
-/**
- * Sale.creditEntries
- */
-export type Sale$creditEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the CreditLedgerEntry
-   */
-  select?: Prisma.CreditLedgerEntrySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the CreditLedgerEntry
-   */
-  omit?: Prisma.CreditLedgerEntryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.CreditLedgerEntryInclude<ExtArgs> | null
-  where?: Prisma.CreditLedgerEntryWhereInput
-  orderBy?: Prisma.CreditLedgerEntryOrderByWithRelationInput | Prisma.CreditLedgerEntryOrderByWithRelationInput[]
-  cursor?: Prisma.CreditLedgerEntryWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.CreditLedgerEntryScalarFieldEnum | Prisma.CreditLedgerEntryScalarFieldEnum[]
 }
 
 /**

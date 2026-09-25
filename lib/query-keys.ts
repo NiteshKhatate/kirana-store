@@ -1,0 +1,17 @@
+export const queryKeys = {
+  health: ["health"] as const,
+  categories: ["categories"] as const,
+  products: (filters: unknown = {}) => ["products", filters] as const,
+  product: (id: string) => ["product", id] as const,
+  suppliers: (filters: unknown = {}) => ["suppliers", filters] as const,
+  purchases: (filters: unknown = {}) => ["purchases", filters] as const,
+  purchase: (id: string) => ["purchase", id] as const,
+  customers: (filters: unknown = {}) => ["customers", filters] as const,
+  customer: (id: string) => ["customer", id] as const,
+  customerCredit: (customerId: string) => ["customer-credit", customerId] as const,
+  sales: (filters: unknown = {}) => ["sales", filters] as const,
+  sale: (id: string) => ["sale", id] as const,
+  inventory: (filters: unknown = {}) => ["inventory", filters] as const,
+  dashboardSummary: (dateRange: unknown = {}) => ["dashboard-summary", dateRange] as const,
+  reports: (reportType: string, filters: unknown = {}) => ["reports", reportType, filters] as const,
+};
