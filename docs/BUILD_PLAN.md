@@ -188,33 +188,33 @@ Verify core constraints:
 
 ## 3.1 Authentication
 
-- [ ] Create login page
-- [ ] Add email/password sign-in
-- [ ] Handle authentication errors
-- [ ] Handle session restoration
-- [ ] Add logout
-- [ ] Protect authenticated pages
-- [ ] Protect API routes
+- [x] Create login page
+- [x] Add email/password sign-in
+- [x] Handle authentication errors
+- [x] Handle session restoration
+- [x] Add logout
+- [x] Protect authenticated pages
+- [x] Protect API routes
 
 ## 3.2 Local User Mapping
 
-- [ ] Map Supabase Auth user to `User`
-- [ ] Create application User on first login/admin bootstrap
-- [ ] Store `supabaseUserId`
-- [ ] Resolve current StoreMember
-- [ ] Resolve current Store
+- [x] Map Supabase Auth user to `User`
+- [x] Create application User on first login/admin bootstrap
+- [x] Store `supabaseUserId`
+- [x] Resolve current StoreMember
+- [x] Resolve current Store
 
 ## 3.3 Initial Store Setup
 
-- [ ] Create initial Store
-- [ ] Create OWNER membership
-- [ ] Verify owner can access the store
-- [ ] Verify unauthenticated users cannot access store data
-- [ ] Verify cross-store access is rejected
+- [x] Create initial Store
+- [x] Create OWNER membership
+- [x] Verify owner can access the store
+- [x] Verify unauthenticated users cannot access store data
+- [x] Verify cross-store access is rejected
 
 ### Stage 3 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
