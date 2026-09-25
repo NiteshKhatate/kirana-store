@@ -4,6 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useAuth } from "@/features/auth/auth-context";
 import { loginSchema, type LoginInput } from "@/schemas/auth";
+import { Alert } from "@/components/ui/Alert";
+import { Button } from "@/components/ui/Button";
+import { FormField } from "@/components/ui/FormField";
+import { Input } from "@/components/ui/Input";
 
 export function LoginForm() {
   const { signIn } = useAuth();
@@ -24,26 +28,22 @@ export function LoginForm() {
   });
 
   return (
-    <form onSubmit={(event) => void onSubmit(event)} noValidate>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="email" autoComplete="email" {...register("email")} />
-        {errors.email && <p role="alert">{errors.email.message}</p>}
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
+    <form className="space-y-5" onSubmit={(event) => void onSubmit(event)} noValidate>
+      <FormField label="Email" htmlFor="email" error={errors.email?.message}>
+        <Input id="email" type="email" autoComplete="email" {...register("email")} />
+      </FormField>
+      <FormField label="Password" htmlFor="password" error={errors.password?.message}>
+        <Input
           id="password"
           type="password"
           autoComplete="current-password"
           {...register("password")}
         />
-        {errors.password && <p role="alert">{errors.password.message}</p>}
-      </div>
-      {serverError && <p role="alert">{serverError}</p>}
-      <button type="submit" disabled={isSubmitting}>
+      </FormField>
+      {serverError && <Alert tone="danger">{serverError}</Alert>}
+      <Button className="w-full" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Signing in…" : "Sign in"}
-      </button>
+      </Button>
     </form>
   );
 }

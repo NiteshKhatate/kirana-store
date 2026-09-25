@@ -224,67 +224,67 @@ Verify core constraints:
 
 Define semantic color names:
 
-- [ ] brand colors
-- [ ] surface colors
-- [ ] content/text colors
-- [ ] border colors
-- [ ] success colors
-- [ ] warning colors
-- [ ] danger colors
-- [ ] info colors
+- [x] brand colors
+- [x] surface colors
+- [x] content/text colors
+- [x] border colors
+- [x] success colors
+- [x] warning colors
+- [x] danger colors
+- [x] info colors
 
 ## 4.2 Typography
 
-- [ ] font family
-- [ ] display sizes
-- [ ] page heading
-- [ ] section heading
-- [ ] body
-- [ ] body small
-- [ ] caption
+- [x] font family
+- [x] display sizes
+- [x] page heading
+- [x] section heading
+- [x] body
+- [x] body small
+- [x] caption
 
 ## 4.3 Shared UI Tokens
 
-- [ ] button heights
-- [ ] input heights
-- [ ] card radius
-- [ ] control radius
-- [ ] card shadow
-- [ ] page background
-- [ ] content width
-- [ ] sidebar width
-- [ ] spacing conventions
+- [x] button heights
+- [x] input heights
+- [x] card radius
+- [x] control radius
+- [x] card shadow
+- [x] page background
+- [x] content width
+- [x] sidebar width
+- [x] spacing conventions
 
 ## 4.4 Reusable UI Components
 
-- [ ] Button
-- [ ] Input
-- [ ] Select
-- [ ] Textarea
-- [ ] Checkbox
-- [ ] FormField
-- [ ] Card
-- [ ] Badge
-- [ ] Alert
-- [ ] Modal
-- [ ] Table
-- [ ] Pagination
-- [ ] EmptyState
-- [ ] LoadingState
-- [ ] ErrorState
+- [x] Button
+- [x] Input
+- [x] Select
+- [x] Textarea
+- [x] Checkbox
+- [x] FormField
+- [x] Card
+- [x] Badge
+- [x] Alert
+- [x] Modal
+- [x] Table
+- [x] Pagination
+- [x] EmptyState
+- [x] LoadingState
+- [x] ErrorState
 
 ## 4.5 Application Shell
 
-- [ ] sidebar
-- [ ] top bar
-- [ ] page container
-- [ ] desktop navigation
-- [ ] mobile navigation/drawer
-- [ ] responsive page layout
+- [x] sidebar
+- [x] top bar
+- [x] page container
+- [x] desktop navigation
+- [x] mobile navigation/drawer
+- [x] responsive page layout
 
 ### Stage 4 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -292,56 +292,56 @@ Define semantic color names:
 
 ## 5.1 Category APIs
 
-- [ ] list categories
-- [ ] create category
-- [ ] edit category
-- [ ] validate duplicate category name
+- [x] list categories
+- [x] create category
+- [x] edit category
+- [x] validate duplicate category name
 
 ## 5.2 Product APIs
 
-- [ ] list products
-- [ ] get product
-- [ ] create product
-- [ ] update product
-- [ ] activate/deactivate product
+- [x] list products
+- [x] get product
+- [x] create product
+- [x] update product
+- [x] activate/deactivate product
 
 ## 5.3 Product Validation
 
-- [ ] SKU required
-- [ ] SKU unique per store
-- [ ] product name required
-- [ ] MRP >= 0
-- [ ] buying price >= 0
-- [ ] selling price >= 0
-- [ ] reorder level >= 0
-- [ ] category belongs to same store
+- [x] SKU required
+- [x] SKU unique per store
+- [x] product name required
+- [x] MRP >= 0
+- [x] buying price >= 0
+- [x] selling price >= 0
+- [x] reorder level >= 0
+- [x] category belongs to same store
 
 ## 5.4 Product UI
 
-- [ ] products page
-- [ ] search
-- [ ] category filter
-- [ ] active/inactive filter
-- [ ] pagination
-- [ ] create product form
-- [ ] edit product form
-- [ ] desktop table
-- [ ] mobile-friendly representation
-- [ ] empty state
-- [ ] loading state
-- [ ] error state
+- [x] products page
+- [x] search
+- [x] category filter
+- [x] active/inactive filter
+- [x] pagination
+- [x] create product form
+- [x] edit product form
+- [x] desktop table
+- [x] mobile-friendly representation
+- [x] empty state
+- [x] loading state
+- [x] error state
 
 ## 5.5 Product Tests
 
-- [ ] validation tests
-- [ ] duplicate SKU test
-- [ ] cross-store authorization test
-- [ ] product API test
-- [ ] form test
+- [x] validation tests
+- [x] duplicate SKU test
+- [x] cross-store authorization test
+- [x] product API test
+- [x] form test
 
 ### Stage 5 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 

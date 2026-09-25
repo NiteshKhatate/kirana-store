@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import { useAuth } from "@/features/auth/auth-context";
+import { Alert } from "@/components/ui/Alert";
+import { Button } from "@/components/ui/Button";
 
 export function LogoutButton() {
   const { signOut } = useAuth();
@@ -22,10 +24,10 @@ export function LogoutButton() {
 
   return (
     <div>
-      <button type="button" onClick={() => void handleLogout()} disabled={isSubmitting}>
+      <Button type="button" variant="secondary" size="sm" onClick={() => void handleLogout()} disabled={isSubmitting}>
         {isSubmitting ? "Signing out…" : "Sign out"}
-      </button>
-      {error && <p role="alert">{error}</p>}
+      </Button>
+      {error && <div className="mt-2"><Alert tone="danger">{error}</Alert></div>}
     </div>
   );
 }
