@@ -1,8 +1,8 @@
-import { z, type ZodType } from "zod";
+import { z } from "zod";
 
 import { validationError } from "@/lib/api-errors";
 
-export function parseWithSchema<T>(schema: ZodType<T>, input: unknown): T {
+export function parseWithSchema<TSchema extends z.ZodTypeAny>(schema: TSchema, input: unknown): z.output<TSchema> {
   const result = schema.safeParse(input);
   if (!result.success) {
     throw validationError(result.error);
@@ -11,7 +11,7 @@ export function parseWithSchema<T>(schema: ZodType<T>, input: unknown): T {
   return result.data;
 }
 
-export function parseJsonBody<T>(schema: ZodType<T>, body: unknown): T {
+export function parseJsonBody<TSchema extends z.ZodTypeAny>(schema: TSchema, body: unknown): z.output<TSchema> {
   return parseWithSchema(schema, body);
 }
 
