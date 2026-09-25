@@ -264,10 +264,10 @@ export type CreditLedgerEntryWhereInput = {
   notes?: Prisma.StringNullableFilter<"CreditLedgerEntry"> | string | null
   createdById?: Prisma.StringFilter<"CreditLedgerEntry"> | string
   createdAt?: Prisma.DateTimeFilter<"CreditLedgerEntry"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
   sale?: Prisma.XOR<Prisma.SaleNullableScalarRelationFilter, Prisma.SaleWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
 
 export type CreditLedgerEntryOrderByWithRelationInput = {
@@ -282,10 +282,10 @@ export type CreditLedgerEntryOrderByWithRelationInput = {
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
   customer?: Prisma.CustomerOrderByWithRelationInput
   sale?: Prisma.SaleOrderByWithRelationInput
-  createdBy?: Prisma.UserOrderByWithRelationInput
+  store?: Prisma.StoreOrderByWithRelationInput
 }
 
 export type CreditLedgerEntryWhereUniqueInput = Prisma.AtLeast<{
@@ -303,10 +303,10 @@ export type CreditLedgerEntryWhereUniqueInput = Prisma.AtLeast<{
   notes?: Prisma.StringNullableFilter<"CreditLedgerEntry"> | string | null
   createdById?: Prisma.StringFilter<"CreditLedgerEntry"> | string
   createdAt?: Prisma.DateTimeFilter<"CreditLedgerEntry"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
   sale?: Prisma.XOR<Prisma.SaleNullableScalarRelationFilter, Prisma.SaleWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id">
 
 export type CreditLedgerEntryOrderByWithAggregationInput = {
@@ -353,10 +353,10 @@ export type CreditLedgerEntryCreateInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
   customer: Prisma.CustomerCreateNestedOneWithoutCreditEntriesInput
   sale?: Prisma.SaleCreateNestedOneWithoutCreditEntriesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
 }
 
 export type CreditLedgerEntryUncheckedCreateInput = {
@@ -381,10 +381,10 @@ export type CreditLedgerEntryUpdateInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutCreditEntriesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutCreditEntriesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
 }
 
 export type CreditLedgerEntryUncheckedUpdateInput = {
@@ -679,9 +679,9 @@ export type CreditLedgerEntryCreateWithoutStoreInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
+  createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
   customer: Prisma.CustomerCreateNestedOneWithoutCreditEntriesInput
   sale?: Prisma.SaleCreateNestedOneWithoutCreditEntriesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
 }
 
 export type CreditLedgerEntryUncheckedCreateWithoutStoreInput = {
@@ -748,9 +748,9 @@ export type CreditLedgerEntryCreateWithoutCreatedByInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
   customer: Prisma.CustomerCreateNestedOneWithoutCreditEntriesInput
   sale?: Prisma.SaleCreateNestedOneWithoutCreditEntriesInput
+  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
 }
 
 export type CreditLedgerEntryUncheckedCreateWithoutCreatedByInput = {
@@ -800,9 +800,9 @@ export type CreditLedgerEntryCreateWithoutCustomerInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
-  sale?: Prisma.SaleCreateNestedOneWithoutCreditEntriesInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
+  sale?: Prisma.SaleCreateNestedOneWithoutCreditEntriesInput
+  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
 }
 
 export type CreditLedgerEntryUncheckedCreateWithoutCustomerInput = {
@@ -852,9 +852,9 @@ export type CreditLedgerEntryCreateWithoutSaleInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
-  customer: Prisma.CustomerCreateNestedOneWithoutCreditEntriesInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreditMovesInput
+  customer: Prisma.CustomerCreateNestedOneWithoutCreditEntriesInput
+  store: Prisma.StoreCreateNestedOneWithoutCreditMovesInput
 }
 
 export type CreditLedgerEntryUncheckedCreateWithoutSaleInput = {
@@ -917,9 +917,9 @@ export type CreditLedgerEntryUpdateWithoutStoreInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutCreditEntriesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutCreditEntriesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
 }
 
 export type CreditLedgerEntryUncheckedUpdateWithoutStoreInput = {
@@ -969,9 +969,9 @@ export type CreditLedgerEntryUpdateWithoutCreatedByInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutCreditEntriesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutCreditEntriesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
 }
 
 export type CreditLedgerEntryUncheckedUpdateWithoutCreatedByInput = {
@@ -1021,9 +1021,9 @@ export type CreditLedgerEntryUpdateWithoutCustomerInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
-  sale?: Prisma.SaleUpdateOneWithoutCreditEntriesNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
+  sale?: Prisma.SaleUpdateOneWithoutCreditEntriesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
 }
 
 export type CreditLedgerEntryUncheckedUpdateWithoutCustomerInput = {
@@ -1073,9 +1073,9 @@ export type CreditLedgerEntryUpdateWithoutSaleInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
-  customer?: Prisma.CustomerUpdateOneRequiredWithoutCreditEntriesNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreditMovesNestedInput
+  customer?: Prisma.CustomerUpdateOneRequiredWithoutCreditEntriesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutCreditMovesNestedInput
 }
 
 export type CreditLedgerEntryUncheckedUpdateWithoutSaleInput = {
@@ -1118,10 +1118,10 @@ export type CreditLedgerEntrySelect<ExtArgs extends runtime.Types.Extensions.Int
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["creditLedgerEntry"]>
 
 export type CreditLedgerEntrySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1136,10 +1136,10 @@ export type CreditLedgerEntrySelectCreateManyAndReturn<ExtArgs extends runtime.T
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["creditLedgerEntry"]>
 
 export type CreditLedgerEntrySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1154,10 +1154,10 @@ export type CreditLedgerEntrySelectUpdateManyAndReturn<ExtArgs extends runtime.T
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["creditLedgerEntry"]>
 
 export type CreditLedgerEntrySelectScalar = {
@@ -1176,31 +1176,31 @@ export type CreditLedgerEntrySelectScalar = {
 
 export type CreditLedgerEntryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "customerId" | "saleId" | "type" | "amountDelta" | "paymentMethod" | "reference" | "notes" | "createdById" | "createdAt", ExtArgs["result"]["creditLedgerEntry"]>
 export type CreditLedgerEntryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type CreditLedgerEntryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type CreditLedgerEntryIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   sale?: boolean | Prisma.CreditLedgerEntry$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 
 export type $CreditLedgerEntryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "CreditLedgerEntry"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
+    createdBy: Prisma.$UserPayload<ExtArgs>
     customer: Prisma.$CustomerPayload<ExtArgs>
     sale: Prisma.$SalePayload<ExtArgs> | null
-    createdBy: Prisma.$UserPayload<ExtArgs>
+    store: Prisma.$StorePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1608,10 +1608,10 @@ readonly fields: CreditLedgerEntryFieldRefs;
  */
 export interface Prisma__CreditLedgerEntryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   customer<T extends Prisma.CustomerDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CustomerDefaultArgs<ExtArgs>>): Prisma.Prisma__CustomerClient<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   sale<T extends Prisma.CreditLedgerEntry$saleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CreditLedgerEntry$saleArgs<ExtArgs>>): Prisma.Prisma__SaleClient<runtime.Types.Result.GetResult<Prisma.$SalePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

@@ -276,11 +276,11 @@ export type InventoryMovementWhereInput = {
   notes?: Prisma.StringNullableFilter<"InventoryMovement"> | string | null
   createdById?: Prisma.StringFilter<"InventoryMovement"> | string
   createdAt?: Prisma.DateTimeFilter<"InventoryMovement"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
   purchase?: Prisma.XOR<Prisma.PurchaseNullableScalarRelationFilter, Prisma.PurchaseWhereInput> | null
   sale?: Prisma.XOR<Prisma.SaleNullableScalarRelationFilter, Prisma.SaleWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
 
 export type InventoryMovementOrderByWithRelationInput = {
@@ -296,11 +296,11 @@ export type InventoryMovementOrderByWithRelationInput = {
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
   product?: Prisma.ProductOrderByWithRelationInput
   purchase?: Prisma.PurchaseOrderByWithRelationInput
   sale?: Prisma.SaleOrderByWithRelationInput
-  createdBy?: Prisma.UserOrderByWithRelationInput
+  store?: Prisma.StoreOrderByWithRelationInput
 }
 
 export type InventoryMovementWhereUniqueInput = Prisma.AtLeast<{
@@ -319,11 +319,11 @@ export type InventoryMovementWhereUniqueInput = Prisma.AtLeast<{
   notes?: Prisma.StringNullableFilter<"InventoryMovement"> | string | null
   createdById?: Prisma.StringFilter<"InventoryMovement"> | string
   createdAt?: Prisma.DateTimeFilter<"InventoryMovement"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
   purchase?: Prisma.XOR<Prisma.PurchaseNullableScalarRelationFilter, Prisma.PurchaseWhereInput> | null
   sale?: Prisma.XOR<Prisma.SaleNullableScalarRelationFilter, Prisma.SaleWhereInput> | null
-  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id">
 
 export type InventoryMovementOrderByWithAggregationInput = {
@@ -372,11 +372,11 @@ export type InventoryMovementCreateInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
+  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
   product: Prisma.ProductCreateNestedOneWithoutStockMovesInput
   purchase?: Prisma.PurchaseCreateNestedOneWithoutStockMovesInput
   sale?: Prisma.SaleCreateNestedOneWithoutStockMovesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateInput = {
@@ -402,11 +402,11 @@ export type InventoryMovementUpdateInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutStockMovesNestedInput
   purchase?: Prisma.PurchaseUpdateOneWithoutStockMovesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutStockMovesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateInput = {
@@ -751,10 +751,10 @@ export type InventoryMovementCreateWithoutStoreInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
+  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
   product: Prisma.ProductCreateNestedOneWithoutStockMovesInput
   purchase?: Prisma.PurchaseCreateNestedOneWithoutStockMovesInput
   sale?: Prisma.SaleCreateNestedOneWithoutStockMovesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateWithoutStoreInput = {
@@ -823,10 +823,10 @@ export type InventoryMovementCreateWithoutCreatedByInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
   product: Prisma.ProductCreateNestedOneWithoutStockMovesInput
   purchase?: Prisma.PurchaseCreateNestedOneWithoutStockMovesInput
   sale?: Prisma.SaleCreateNestedOneWithoutStockMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateWithoutCreatedByInput = {
@@ -877,10 +877,10 @@ export type InventoryMovementCreateWithoutProductInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
+  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
   purchase?: Prisma.PurchaseCreateNestedOneWithoutStockMovesInput
   sale?: Prisma.SaleCreateNestedOneWithoutStockMovesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateWithoutProductInput = {
@@ -931,10 +931,10 @@ export type InventoryMovementCreateWithoutPurchaseInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
+  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
   product: Prisma.ProductCreateNestedOneWithoutStockMovesInput
   sale?: Prisma.SaleCreateNestedOneWithoutStockMovesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateWithoutPurchaseInput = {
@@ -985,10 +985,10 @@ export type InventoryMovementCreateWithoutSaleInput = {
   reference?: string | null
   notes?: string | null
   createdAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
+  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
   product: Prisma.ProductCreateNestedOneWithoutStockMovesInput
   purchase?: Prisma.PurchaseCreateNestedOneWithoutStockMovesInput
-  createdBy: Prisma.UserCreateNestedOneWithoutStockMovesInput
+  store: Prisma.StoreCreateNestedOneWithoutStockMovesInput
 }
 
 export type InventoryMovementUncheckedCreateWithoutSaleInput = {
@@ -1053,10 +1053,10 @@ export type InventoryMovementUpdateWithoutStoreInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutStockMovesNestedInput
   purchase?: Prisma.PurchaseUpdateOneWithoutStockMovesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutStockMovesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateWithoutStoreInput = {
@@ -1109,10 +1109,10 @@ export type InventoryMovementUpdateWithoutCreatedByInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutStockMovesNestedInput
   purchase?: Prisma.PurchaseUpdateOneWithoutStockMovesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutStockMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateWithoutCreatedByInput = {
@@ -1165,10 +1165,10 @@ export type InventoryMovementUpdateWithoutProductInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
   purchase?: Prisma.PurchaseUpdateOneWithoutStockMovesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutStockMovesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateWithoutProductInput = {
@@ -1221,10 +1221,10 @@ export type InventoryMovementUpdateWithoutPurchaseInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutStockMovesNestedInput
   sale?: Prisma.SaleUpdateOneWithoutStockMovesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateWithoutPurchaseInput = {
@@ -1277,10 +1277,10 @@ export type InventoryMovementUpdateWithoutSaleInput = {
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutStockMovesNestedInput
   purchase?: Prisma.PurchaseUpdateOneWithoutStockMovesNestedInput
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutStockMovesNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutStockMovesNestedInput
 }
 
 export type InventoryMovementUncheckedUpdateWithoutSaleInput = {
@@ -1326,11 +1326,11 @@ export type InventoryMovementSelect<ExtArgs extends runtime.Types.Extensions.Int
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["inventoryMovement"]>
 
 export type InventoryMovementSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1346,11 +1346,11 @@ export type InventoryMovementSelectCreateManyAndReturn<ExtArgs extends runtime.T
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["inventoryMovement"]>
 
 export type InventoryMovementSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1366,11 +1366,11 @@ export type InventoryMovementSelectUpdateManyAndReturn<ExtArgs extends runtime.T
   notes?: boolean
   createdById?: boolean
   createdAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["inventoryMovement"]>
 
 export type InventoryMovementSelectScalar = {
@@ -1390,35 +1390,35 @@ export type InventoryMovementSelectScalar = {
 
 export type InventoryMovementOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "productId" | "type" | "quantityDelta" | "unitCost" | "purchaseId" | "saleId" | "reference" | "notes" | "createdById" | "createdAt", ExtArgs["result"]["inventoryMovement"]>
 export type InventoryMovementInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type InventoryMovementIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type InventoryMovementIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   purchase?: boolean | Prisma.InventoryMovement$purchaseArgs<ExtArgs>
   sale?: boolean | Prisma.InventoryMovement$saleArgs<ExtArgs>
-  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 
 export type $InventoryMovementPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "InventoryMovement"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
+    createdBy: Prisma.$UserPayload<ExtArgs>
     product: Prisma.$ProductPayload<ExtArgs>
     purchase: Prisma.$PurchasePayload<ExtArgs> | null
     sale: Prisma.$SalePayload<ExtArgs> | null
-    createdBy: Prisma.$UserPayload<ExtArgs>
+    store: Prisma.$StorePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1827,11 +1827,11 @@ readonly fields: InventoryMovementFieldRefs;
  */
 export interface Prisma__InventoryMovementClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   purchase<T extends Prisma.InventoryMovement$purchaseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InventoryMovement$purchaseArgs<ExtArgs>>): Prisma.Prisma__PurchaseClient<runtime.Types.Result.GetResult<Prisma.$PurchasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   sale<T extends Prisma.InventoryMovement$saleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InventoryMovement$saleArgs<ExtArgs>>): Prisma.Prisma__SaleClient<runtime.Types.Result.GetResult<Prisma.$SalePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

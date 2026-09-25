@@ -198,15 +198,15 @@ export type StoreWhereInput = {
   gstNumber?: Prisma.StringNullableFilter<"Store"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Store"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Store"> | Date | string
-  members?: Prisma.StoreMemberListRelationFilter
   categories?: Prisma.CategoryListRelationFilter
-  products?: Prisma.ProductListRelationFilter
-  suppliers?: Prisma.SupplierListRelationFilter
+  creditMoves?: Prisma.CreditLedgerEntryListRelationFilter
   customers?: Prisma.CustomerListRelationFilter
+  stockMoves?: Prisma.InventoryMovementListRelationFilter
+  products?: Prisma.ProductListRelationFilter
   purchases?: Prisma.PurchaseListRelationFilter
   sales?: Prisma.SaleListRelationFilter
-  stockMoves?: Prisma.InventoryMovementListRelationFilter
-  creditMoves?: Prisma.CreditLedgerEntryListRelationFilter
+  members?: Prisma.StoreMemberListRelationFilter
+  suppliers?: Prisma.SupplierListRelationFilter
 }
 
 export type StoreOrderByWithRelationInput = {
@@ -217,15 +217,15 @@ export type StoreOrderByWithRelationInput = {
   gstNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  members?: Prisma.StoreMemberOrderByRelationAggregateInput
   categories?: Prisma.CategoryOrderByRelationAggregateInput
-  products?: Prisma.ProductOrderByRelationAggregateInput
-  suppliers?: Prisma.SupplierOrderByRelationAggregateInput
+  creditMoves?: Prisma.CreditLedgerEntryOrderByRelationAggregateInput
   customers?: Prisma.CustomerOrderByRelationAggregateInput
+  stockMoves?: Prisma.InventoryMovementOrderByRelationAggregateInput
+  products?: Prisma.ProductOrderByRelationAggregateInput
   purchases?: Prisma.PurchaseOrderByRelationAggregateInput
   sales?: Prisma.SaleOrderByRelationAggregateInput
-  stockMoves?: Prisma.InventoryMovementOrderByRelationAggregateInput
-  creditMoves?: Prisma.CreditLedgerEntryOrderByRelationAggregateInput
+  members?: Prisma.StoreMemberOrderByRelationAggregateInput
+  suppliers?: Prisma.SupplierOrderByRelationAggregateInput
 }
 
 export type StoreWhereUniqueInput = Prisma.AtLeast<{
@@ -239,15 +239,15 @@ export type StoreWhereUniqueInput = Prisma.AtLeast<{
   gstNumber?: Prisma.StringNullableFilter<"Store"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Store"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Store"> | Date | string
-  members?: Prisma.StoreMemberListRelationFilter
   categories?: Prisma.CategoryListRelationFilter
-  products?: Prisma.ProductListRelationFilter
-  suppliers?: Prisma.SupplierListRelationFilter
+  creditMoves?: Prisma.CreditLedgerEntryListRelationFilter
   customers?: Prisma.CustomerListRelationFilter
+  stockMoves?: Prisma.InventoryMovementListRelationFilter
+  products?: Prisma.ProductListRelationFilter
   purchases?: Prisma.PurchaseListRelationFilter
   sales?: Prisma.SaleListRelationFilter
-  stockMoves?: Prisma.InventoryMovementListRelationFilter
-  creditMoves?: Prisma.CreditLedgerEntryListRelationFilter
+  members?: Prisma.StoreMemberListRelationFilter
+  suppliers?: Prisma.SupplierListRelationFilter
 }, "id">
 
 export type StoreOrderByWithAggregationInput = {
@@ -284,15 +284,15 @@ export type StoreCreateInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateInput = {
@@ -303,15 +303,15 @@ export type StoreUncheckedCreateInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUpdateInput = {
@@ -322,15 +322,15 @@ export type StoreUpdateInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateInput = {
@@ -341,15 +341,15 @@ export type StoreUncheckedUpdateInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateManyInput = {
@@ -564,13 +564,13 @@ export type StoreCreateWithoutMembersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutMembersInput = {
@@ -582,13 +582,13 @@ export type StoreUncheckedCreateWithoutMembersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutMembersInput = {
@@ -616,13 +616,13 @@ export type StoreUpdateWithoutMembersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutMembersInput = {
@@ -634,13 +634,13 @@ export type StoreUncheckedUpdateWithoutMembersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCategoriesInput = {
@@ -651,14 +651,14 @@ export type StoreCreateWithoutCategoriesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCategoriesInput = {
@@ -669,14 +669,14 @@ export type StoreUncheckedCreateWithoutCategoriesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCategoriesInput = {
@@ -703,14 +703,14 @@ export type StoreUpdateWithoutCategoriesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCategoriesInput = {
@@ -721,14 +721,14 @@ export type StoreUncheckedUpdateWithoutCategoriesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutProductsInput = {
@@ -739,14 +739,14 @@ export type StoreCreateWithoutProductsInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutProductsInput = {
@@ -757,14 +757,14 @@ export type StoreUncheckedCreateWithoutProductsInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutProductsInput = {
@@ -791,14 +791,14 @@ export type StoreUpdateWithoutProductsInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutProductsInput = {
@@ -809,14 +809,14 @@ export type StoreUncheckedUpdateWithoutProductsInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutSuppliersInput = {
@@ -827,14 +827,14 @@ export type StoreCreateWithoutSuppliersInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutSuppliersInput = {
@@ -845,14 +845,14 @@ export type StoreUncheckedCreateWithoutSuppliersInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutSuppliersInput = {
@@ -879,14 +879,14 @@ export type StoreUpdateWithoutSuppliersInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutSuppliersInput = {
@@ -897,14 +897,14 @@ export type StoreUncheckedUpdateWithoutSuppliersInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutPurchasesInput = {
@@ -915,14 +915,14 @@ export type StoreCreateWithoutPurchasesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
-  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
-  sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
   creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
+  sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutPurchasesInput = {
@@ -933,14 +933,14 @@ export type StoreUncheckedCreateWithoutPurchasesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
-  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
-  sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
   creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
+  sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutPurchasesInput = {
@@ -967,14 +967,14 @@ export type StoreUpdateWithoutPurchasesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
-  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
-  sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
   creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
+  sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutPurchasesInput = {
@@ -985,14 +985,14 @@ export type StoreUncheckedUpdateWithoutPurchasesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
-  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
-  sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
   creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+  sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCustomersInput = {
@@ -1003,14 +1003,14 @@ export type StoreCreateWithoutCustomersInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
   products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCustomersInput = {
@@ -1021,14 +1021,14 @@ export type StoreUncheckedCreateWithoutCustomersInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
   products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCustomersInput = {
@@ -1055,14 +1055,14 @@ export type StoreUpdateWithoutCustomersInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
   products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCustomersInput = {
@@ -1073,14 +1073,14 @@ export type StoreUncheckedUpdateWithoutCustomersInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
   products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutSalesInput = {
@@ -1091,14 +1091,14 @@ export type StoreCreateWithoutSalesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
-  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
-  purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
   creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
+  purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutSalesInput = {
@@ -1109,14 +1109,14 @@ export type StoreUncheckedCreateWithoutSalesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
-  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
-  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
   creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
+  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutSalesInput = {
@@ -1143,14 +1143,14 @@ export type StoreUpdateWithoutSalesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
-  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
-  purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
   creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
+  purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutSalesInput = {
@@ -1161,14 +1161,14 @@ export type StoreUncheckedUpdateWithoutSalesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
-  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
-  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
   creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutStockMovesInput = {
@@ -1179,14 +1179,14 @@ export type StoreCreateWithoutStockMovesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutStockMovesInput = {
@@ -1197,14 +1197,14 @@ export type StoreUncheckedCreateWithoutStockMovesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutStockMovesInput = {
@@ -1231,14 +1231,14 @@ export type StoreUpdateWithoutStockMovesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutStockMovesInput = {
@@ -1249,14 +1249,14 @@ export type StoreUncheckedUpdateWithoutStockMovesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
+  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  creditMoves?: Prisma.CreditLedgerEntryUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCreditMovesInput = {
@@ -1267,14 +1267,14 @@ export type StoreCreateWithoutCreditMovesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCreditMovesInput = {
@@ -1285,14 +1285,14 @@ export type StoreUncheckedCreateWithoutCreditMovesInput = {
   gstNumber?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutStoreInput
-  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
-  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutStoreInput
   sales?: Prisma.SaleUncheckedCreateNestedManyWithoutStoreInput
-  stockMoves?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutStoreInput
+  members?: Prisma.StoreMemberUncheckedCreateNestedManyWithoutStoreInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCreditMovesInput = {
@@ -1319,14 +1319,14 @@ export type StoreUpdateWithoutCreditMovesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCreditMovesInput = {
@@ -1337,14 +1337,14 @@ export type StoreUncheckedUpdateWithoutCreditMovesInput = {
   gstNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutStoreNestedInput
-  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
-  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutStoreNestedInput
   sales?: Prisma.SaleUncheckedUpdateManyWithoutStoreNestedInput
-  stockMoves?: Prisma.InventoryMovementUncheckedUpdateManyWithoutStoreNestedInput
+  members?: Prisma.StoreMemberUncheckedUpdateManyWithoutStoreNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 
@@ -1353,27 +1353,27 @@ export type StoreUncheckedUpdateWithoutCreditMovesInput = {
  */
 
 export type StoreCountOutputType = {
-  members: number
   categories: number
-  products: number
-  suppliers: number
+  creditMoves: number
   customers: number
+  stockMoves: number
+  products: number
   purchases: number
   sales: number
-  stockMoves: number
-  creditMoves: number
+  members: number
+  suppliers: number
 }
 
 export type StoreCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  members?: boolean | StoreCountOutputTypeCountMembersArgs
   categories?: boolean | StoreCountOutputTypeCountCategoriesArgs
-  products?: boolean | StoreCountOutputTypeCountProductsArgs
-  suppliers?: boolean | StoreCountOutputTypeCountSuppliersArgs
+  creditMoves?: boolean | StoreCountOutputTypeCountCreditMovesArgs
   customers?: boolean | StoreCountOutputTypeCountCustomersArgs
+  stockMoves?: boolean | StoreCountOutputTypeCountStockMovesArgs
+  products?: boolean | StoreCountOutputTypeCountProductsArgs
   purchases?: boolean | StoreCountOutputTypeCountPurchasesArgs
   sales?: boolean | StoreCountOutputTypeCountSalesArgs
-  stockMoves?: boolean | StoreCountOutputTypeCountStockMovesArgs
-  creditMoves?: boolean | StoreCountOutputTypeCountCreditMovesArgs
+  members?: boolean | StoreCountOutputTypeCountMembersArgs
+  suppliers?: boolean | StoreCountOutputTypeCountSuppliersArgs
 }
 
 /**
@@ -1389,13 +1389,6 @@ export type StoreCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountMembersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.StoreMemberWhereInput
-}
-
-/**
- * StoreCountOutputType without action
- */
 export type StoreCountOutputTypeCountCategoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.CategoryWhereInput
 }
@@ -1403,15 +1396,8 @@ export type StoreCountOutputTypeCountCategoriesArgs<ExtArgs extends runtime.Type
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ProductWhereInput
-}
-
-/**
- * StoreCountOutputType without action
- */
-export type StoreCountOutputTypeCountSuppliersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SupplierWhereInput
+export type StoreCountOutputTypeCountCreditMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CreditLedgerEntryWhereInput
 }
 
 /**
@@ -1419,6 +1405,20 @@ export type StoreCountOutputTypeCountSuppliersArgs<ExtArgs extends runtime.Types
  */
 export type StoreCountOutputTypeCountCustomersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.CustomerWhereInput
+}
+
+/**
+ * StoreCountOutputType without action
+ */
+export type StoreCountOutputTypeCountStockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InventoryMovementWhereInput
+}
+
+/**
+ * StoreCountOutputType without action
+ */
+export type StoreCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductWhereInput
 }
 
 /**
@@ -1438,15 +1438,15 @@ export type StoreCountOutputTypeCountSalesArgs<ExtArgs extends runtime.Types.Ext
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountStockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InventoryMovementWhereInput
+export type StoreCountOutputTypeCountMembersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StoreMemberWhereInput
 }
 
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountCreditMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CreditLedgerEntryWhereInput
+export type StoreCountOutputTypeCountSuppliersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SupplierWhereInput
 }
 
 
@@ -1458,15 +1458,15 @@ export type StoreSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   gstNumber?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  members?: boolean | Prisma.Store$membersArgs<ExtArgs>
   categories?: boolean | Prisma.Store$categoriesArgs<ExtArgs>
-  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
-  suppliers?: boolean | Prisma.Store$suppliersArgs<ExtArgs>
+  creditMoves?: boolean | Prisma.Store$creditMovesArgs<ExtArgs>
   customers?: boolean | Prisma.Store$customersArgs<ExtArgs>
+  stockMoves?: boolean | Prisma.Store$stockMovesArgs<ExtArgs>
+  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
   purchases?: boolean | Prisma.Store$purchasesArgs<ExtArgs>
   sales?: boolean | Prisma.Store$salesArgs<ExtArgs>
-  stockMoves?: boolean | Prisma.Store$stockMovesArgs<ExtArgs>
-  creditMoves?: boolean | Prisma.Store$creditMovesArgs<ExtArgs>
+  members?: boolean | Prisma.Store$membersArgs<ExtArgs>
+  suppliers?: boolean | Prisma.Store$suppliersArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["store"]>
 
@@ -1502,15 +1502,15 @@ export type StoreSelectScalar = {
 
 export type StoreOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "phone" | "address" | "gstNumber" | "createdAt" | "updatedAt", ExtArgs["result"]["store"]>
 export type StoreInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  members?: boolean | Prisma.Store$membersArgs<ExtArgs>
   categories?: boolean | Prisma.Store$categoriesArgs<ExtArgs>
-  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
-  suppliers?: boolean | Prisma.Store$suppliersArgs<ExtArgs>
+  creditMoves?: boolean | Prisma.Store$creditMovesArgs<ExtArgs>
   customers?: boolean | Prisma.Store$customersArgs<ExtArgs>
+  stockMoves?: boolean | Prisma.Store$stockMovesArgs<ExtArgs>
+  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
   purchases?: boolean | Prisma.Store$purchasesArgs<ExtArgs>
   sales?: boolean | Prisma.Store$salesArgs<ExtArgs>
-  stockMoves?: boolean | Prisma.Store$stockMovesArgs<ExtArgs>
-  creditMoves?: boolean | Prisma.Store$creditMovesArgs<ExtArgs>
+  members?: boolean | Prisma.Store$membersArgs<ExtArgs>
+  suppliers?: boolean | Prisma.Store$suppliersArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StoreIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1519,15 +1519,15 @@ export type StoreIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type $StorePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Store"
   objects: {
-    members: Prisma.$StoreMemberPayload<ExtArgs>[]
     categories: Prisma.$CategoryPayload<ExtArgs>[]
-    products: Prisma.$ProductPayload<ExtArgs>[]
-    suppliers: Prisma.$SupplierPayload<ExtArgs>[]
+    creditMoves: Prisma.$CreditLedgerEntryPayload<ExtArgs>[]
     customers: Prisma.$CustomerPayload<ExtArgs>[]
+    stockMoves: Prisma.$InventoryMovementPayload<ExtArgs>[]
+    products: Prisma.$ProductPayload<ExtArgs>[]
     purchases: Prisma.$PurchasePayload<ExtArgs>[]
     sales: Prisma.$SalePayload<ExtArgs>[]
-    stockMoves: Prisma.$InventoryMovementPayload<ExtArgs>[]
-    creditMoves: Prisma.$CreditLedgerEntryPayload<ExtArgs>[]
+    members: Prisma.$StoreMemberPayload<ExtArgs>[]
+    suppliers: Prisma.$SupplierPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1931,15 +1931,15 @@ readonly fields: StoreFieldRefs;
  */
 export interface Prisma__StoreClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  members<T extends Prisma.Store$membersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$membersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoreMemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   categories<T extends Prisma.Store$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  products<T extends Prisma.Store$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  suppliers<T extends Prisma.Store$suppliersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$suppliersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SupplierPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  creditMoves<T extends Prisma.Store$creditMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$creditMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CreditLedgerEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   customers<T extends Prisma.Store$customersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$customersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stockMoves<T extends Prisma.Store$stockMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$stockMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InventoryMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  products<T extends Prisma.Store$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   purchases<T extends Prisma.Store$purchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$purchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   sales<T extends Prisma.Store$salesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$salesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  stockMoves<T extends Prisma.Store$stockMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$stockMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InventoryMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  creditMoves<T extends Prisma.Store$creditMovesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$creditMovesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CreditLedgerEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  members<T extends Prisma.Store$membersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$membersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoreMemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  suppliers<T extends Prisma.Store$suppliersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$suppliersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SupplierPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2364,30 +2364,6 @@ export type StoreDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
- * Store.members
- */
-export type Store$membersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the StoreMember
-   */
-  select?: Prisma.StoreMemberSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the StoreMember
-   */
-  omit?: Prisma.StoreMemberOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.StoreMemberInclude<ExtArgs> | null
-  where?: Prisma.StoreMemberWhereInput
-  orderBy?: Prisma.StoreMemberOrderByWithRelationInput | Prisma.StoreMemberOrderByWithRelationInput[]
-  cursor?: Prisma.StoreMemberWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.StoreMemberScalarFieldEnum | Prisma.StoreMemberScalarFieldEnum[]
-}
-
-/**
  * Store.categories
  */
 export type Store$categoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2412,51 +2388,27 @@ export type Store$categoriesArgs<ExtArgs extends runtime.Types.Extensions.Intern
 }
 
 /**
- * Store.products
+ * Store.creditMoves
  */
-export type Store$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Store$creditMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Product
+   * Select specific fields to fetch from the CreditLedgerEntry
    */
-  select?: Prisma.ProductSelect<ExtArgs> | null
+  select?: Prisma.CreditLedgerEntrySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Product
+   * Omit specific fields from the CreditLedgerEntry
    */
-  omit?: Prisma.ProductOmit<ExtArgs> | null
+  omit?: Prisma.CreditLedgerEntryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ProductInclude<ExtArgs> | null
-  where?: Prisma.ProductWhereInput
-  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
-  cursor?: Prisma.ProductWhereUniqueInput
+  include?: Prisma.CreditLedgerEntryInclude<ExtArgs> | null
+  where?: Prisma.CreditLedgerEntryWhereInput
+  orderBy?: Prisma.CreditLedgerEntryOrderByWithRelationInput | Prisma.CreditLedgerEntryOrderByWithRelationInput[]
+  cursor?: Prisma.CreditLedgerEntryWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
-}
-
-/**
- * Store.suppliers
- */
-export type Store$suppliersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Supplier
-   */
-  select?: Prisma.SupplierSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Supplier
-   */
-  omit?: Prisma.SupplierOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SupplierInclude<ExtArgs> | null
-  where?: Prisma.SupplierWhereInput
-  orderBy?: Prisma.SupplierOrderByWithRelationInput | Prisma.SupplierOrderByWithRelationInput[]
-  cursor?: Prisma.SupplierWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SupplierScalarFieldEnum | Prisma.SupplierScalarFieldEnum[]
+  distinct?: Prisma.CreditLedgerEntryScalarFieldEnum | Prisma.CreditLedgerEntryScalarFieldEnum[]
 }
 
 /**
@@ -2481,6 +2433,54 @@ export type Store$customersArgs<ExtArgs extends runtime.Types.Extensions.Interna
   take?: number
   skip?: number
   distinct?: Prisma.CustomerScalarFieldEnum | Prisma.CustomerScalarFieldEnum[]
+}
+
+/**
+ * Store.stockMoves
+ */
+export type Store$stockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InventoryMovement
+   */
+  select?: Prisma.InventoryMovementSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InventoryMovement
+   */
+  omit?: Prisma.InventoryMovementOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InventoryMovementInclude<ExtArgs> | null
+  where?: Prisma.InventoryMovementWhereInput
+  orderBy?: Prisma.InventoryMovementOrderByWithRelationInput | Prisma.InventoryMovementOrderByWithRelationInput[]
+  cursor?: Prisma.InventoryMovementWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InventoryMovementScalarFieldEnum | Prisma.InventoryMovementScalarFieldEnum[]
+}
+
+/**
+ * Store.products
+ */
+export type Store$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  where?: Prisma.ProductWhereInput
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  cursor?: Prisma.ProductWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
 }
 
 /**
@@ -2532,51 +2532,51 @@ export type Store$salesArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 }
 
 /**
- * Store.stockMoves
+ * Store.members
  */
-export type Store$stockMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Store$membersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the InventoryMovement
+   * Select specific fields to fetch from the StoreMember
    */
-  select?: Prisma.InventoryMovementSelect<ExtArgs> | null
+  select?: Prisma.StoreMemberSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the InventoryMovement
+   * Omit specific fields from the StoreMember
    */
-  omit?: Prisma.InventoryMovementOmit<ExtArgs> | null
+  omit?: Prisma.StoreMemberOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InventoryMovementInclude<ExtArgs> | null
-  where?: Prisma.InventoryMovementWhereInput
-  orderBy?: Prisma.InventoryMovementOrderByWithRelationInput | Prisma.InventoryMovementOrderByWithRelationInput[]
-  cursor?: Prisma.InventoryMovementWhereUniqueInput
+  include?: Prisma.StoreMemberInclude<ExtArgs> | null
+  where?: Prisma.StoreMemberWhereInput
+  orderBy?: Prisma.StoreMemberOrderByWithRelationInput | Prisma.StoreMemberOrderByWithRelationInput[]
+  cursor?: Prisma.StoreMemberWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.InventoryMovementScalarFieldEnum | Prisma.InventoryMovementScalarFieldEnum[]
+  distinct?: Prisma.StoreMemberScalarFieldEnum | Prisma.StoreMemberScalarFieldEnum[]
 }
 
 /**
- * Store.creditMoves
+ * Store.suppliers
  */
-export type Store$creditMovesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Store$suppliersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CreditLedgerEntry
+   * Select specific fields to fetch from the Supplier
    */
-  select?: Prisma.CreditLedgerEntrySelect<ExtArgs> | null
+  select?: Prisma.SupplierSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CreditLedgerEntry
+   * Omit specific fields from the Supplier
    */
-  omit?: Prisma.CreditLedgerEntryOmit<ExtArgs> | null
+  omit?: Prisma.SupplierOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CreditLedgerEntryInclude<ExtArgs> | null
-  where?: Prisma.CreditLedgerEntryWhereInput
-  orderBy?: Prisma.CreditLedgerEntryOrderByWithRelationInput | Prisma.CreditLedgerEntryOrderByWithRelationInput[]
-  cursor?: Prisma.CreditLedgerEntryWhereUniqueInput
+  include?: Prisma.SupplierInclude<ExtArgs> | null
+  where?: Prisma.SupplierWhereInput
+  orderBy?: Prisma.SupplierOrderByWithRelationInput | Prisma.SupplierOrderByWithRelationInput[]
+  cursor?: Prisma.SupplierWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.CreditLedgerEntryScalarFieldEnum | Prisma.CreditLedgerEntryScalarFieldEnum[]
+  distinct?: Prisma.SupplierScalarFieldEnum | Prisma.SupplierScalarFieldEnum[]
 }
 
 /**
