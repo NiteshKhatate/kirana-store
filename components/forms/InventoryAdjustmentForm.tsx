@@ -1,0 +1,10 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { inventoryAdjustmentSchema } from "@/schemas/catalog";
+import type { z } from "zod";
+import { Alert } from "@/components/ui/Alert";
+import { Button } from "@/components/ui/Button";
+import { FormField } from "@/components/ui/FormField";
+import { Input } from "@/components/ui/Input";
+import { Select } from "@/components/ui/Select";
+export function InventoryAdjustmentForm({ products, isSaving, serverError, onSubmit, onCancel }: { products: { id: string; name: string }[]; isSaving: boolean; serverError?: string; onSubmit: (values: z.infer<typeof inventoryAdjustmentSchema>) => Promise<void>; onCancel: () => void }) { const { register, handleSubmit, formState: { errors } } = useForm<z.infer<typeof inventoryAdjustmentSchema>>({ resolver: zodResolver(inventoryAdjustmentSchema) as never, defaultValues: { productId: products[0]?.id ?? "", direction: "IN", quantity: "", reason: "" } }); return <form className="space-y-5" onSubmit={(event) => void handleSubmit(onSubmit)(event)}><FormField label="Product" htmlFor="adjust-product"><Select id="adjust-product" {...register("productId")}>{products.map((product) => <option key={product.id} value={product.id}>{product.name}</option>)}</Select></FormField><FormField label="Direction" htmlFor="adjust-direction"><Select id="adjust-direction" {...register("direction")}><option value="IN">Adjustment in</option><option value="OUT">Adjustment out</option></Select></FormField><FormField label="Quantity" htmlFor="adjust-quantity" error={errors.quantity?.message}><Input id="adjust-quantity" {...register("quantity")} /></FormField><FormField label="Reason" htmlFor="adjust-reason" error={errors.reason?.message}><Input id="adjust-reason" {...register("reason")} /></FormField>{serverError && <Alert tone="danger">{serverError}</Alert>}<div className="flex justify-end gap-3"><Button type="button" variant="secondary" onClick={onCancel}>Cancel</Button><Button type="submit" disabled={isSaving}>{isSaving ? "Saving…" : "Save adjustment"}</Button></div></form>; }

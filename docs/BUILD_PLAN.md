@@ -586,44 +586,44 @@ Single transaction must:
 
 ## 11.1 Inventory API
 
-- [ ] current stock
-- [ ] low-stock filter
-- [ ] out-of-stock filter
-- [ ] category filter
-- [ ] product search
+- [x] current stock
+- [x] low-stock filter
+- [x] out-of-stock filter
+- [x] category filter
+- [x] product search
 
 ## 11.2 Inventory UI
 
 Show:
 
-- [ ] product
-- [ ] SKU
-- [ ] category
-- [ ] current quantity
-- [ ] reorder level
-- [ ] stock status
-- [ ] default buying price
-- [ ] MRP
+- [x] product
+- [x] SKU
+- [x] category
+- [x] current quantity
+- [x] reorder level
+- [x] stock status
+- [x] default buying price
+- [x] MRP
 
 ## 11.3 Inventory Adjustment
 
 P1 if time permits:
 
-- [ ] adjustment in
-- [ ] adjustment out
-- [ ] adjustment reason
-- [ ] InventoryMovement creation
+- [x] adjustment in
+- [x] adjustment out
+- [x] adjustment reason
+- [x] InventoryMovement creation
 
 ## 11.4 Inventory Integrity
 
-- [ ] verify purchase increases balance
-- [ ] verify sale decreases balance
-- [ ] reconciliation query
-- [ ] no negative stock
+- [x] verify purchase increases balance
+- [x] verify sale decreases balance
+- [x] reconciliation query
+- [x] no negative stock
 
 ### Stage 11 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -631,53 +631,53 @@ P1 if time permits:
 
 ## 12.1 Dashboard
 
-- [ ] today's sales
-- [ ] today's purchase value
-- [ ] outstanding customer credit
-- [ ] low-stock count
-- [ ] inventory value estimate
+- [x] today's sales
+- [x] today's purchase value
+- [x] outstanding customer credit
+- [x] low-stock count
+- [x] inventory value estimate
 
 ## 12.2 Inventory Report
 
-- [ ] current stock
-- [ ] low stock
-- [ ] out of stock
-- [ ] category filter
-- [ ] stock value
+- [x] current stock
+- [x] low stock
+- [x] out of stock
+- [x] category filter
+- [x] stock value
 
 ## 12.3 Sales Report
 
-- [ ] date range
-- [ ] total sales
-- [ ] payment split
-- [ ] credit sales
-- [ ] product quantities
-- [ ] gross-profit estimate
+- [x] date range
+- [x] total sales
+- [x] payment split
+- [x] credit sales
+- [x] product quantities
+- [x] gross-profit estimate
 
 ## 12.4 Purchase Report
 
-- [ ] date range
-- [ ] total purchases
-- [ ] supplier filter
-- [ ] product totals
+- [x] date range
+- [x] total purchases
+- [x] supplier filter
+- [x] product totals
 
 ## 12.5 Credit Report
 
-- [ ] customers with outstanding
-- [ ] total outstanding
-- [ ] ledger history
-- [ ] payments
-- [ ] date filters
+- [x] customers with outstanding
+- [x] total outstanding
+- [x] ledger history
+- [x] payments
+- [x] date filters
 
 ## 12.6 P1 Reporting
 
-- [ ] CSV export
-- [ ] top-selling products
-- [ ] print-friendly transaction pages
+- [x] CSV export
+- [x] top-selling products
+- [x] print-friendly transaction pages
 
 ### Stage 12 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -685,41 +685,41 @@ P1 if time permits:
 
 ## 13.1 Jest Setup
 
-- [ ] Jest config
-- [ ] jsdom environment
-- [ ] React Testing Library setup
-- [ ] one sample passing test
+- [x] Jest config
+- [x] jsdom environment
+- [x] React Testing Library setup
+- [x] one sample passing test
 
 ## 13.2 Business Logic Tests
 
-- [ ] product validation
-- [ ] purchase totals
-- [ ] purchase inventory update
-- [ ] sale totals
-- [ ] sale inventory update
-- [ ] stock rejection
-- [ ] credit calculation
-- [ ] repayment
-- [ ] report aggregation
+- [x] product validation
+- [x] purchase totals
+- [x] purchase inventory update
+- [x] sale totals
+- [x] sale inventory update
+- [x] stock rejection
+- [x] credit calculation
+- [x] repayment
+- [x] report aggregation
 
 ## 13.3 API Tests
 
-- [ ] unauthenticated request
-- [ ] forbidden store access
-- [ ] validation failures
-- [ ] expected business errors
+- [x] unauthenticated request
+- [x] forbidden store access
+- [x] validation failures
+- [x] expected business errors
 
 ## 13.4 UI Tests
 
-- [ ] product form
-- [ ] purchase form
-- [ ] sale form
-- [ ] customer form
-- [ ] credit payment form
+- [x] product form
+- [x] purchase form
+- [x] sale form
+- [x] customer form
+- [x] credit payment form
 
 ### Stage 13 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -727,33 +727,33 @@ P1 if time permits:
 
 ## Desktop
 
-- [ ] sidebar layout
-- [ ] table density
-- [ ] filters
-- [ ] action placement
-- [ ] keyboard usability
+- [x] sidebar layout
+- [x] table density
+- [x] filters
+- [x] action placement
+- [x] keyboard usability
 
 ## Mobile
 
-- [ ] responsive navigation
-- [ ] forms stack correctly
-- [ ] action bars wrap
-- [ ] no accidental page overflow
-- [ ] tables remain usable
-- [ ] touch targets usable
+- [x] responsive navigation
+- [x] forms stack correctly
+- [x] action bars wrap
+- [x] no accidental page overflow
+- [x] tables remain usable
+- [x] touch targets usable
 
 ## Common States
 
 Every major screen must have:
 
-- [ ] loading
-- [ ] empty
-- [ ] error
-- [ ] success feedback where relevant
+- [x] loading
+- [x] empty
+- [x] error
+- [x] success feedback where relevant
 
 ### Stage 14 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -761,26 +761,26 @@ Every major screen must have:
 
 ## 15.1 GitHub Actions
 
-- [ ] create `.github/workflows/ci.yml`
-- [ ] checkout
-- [ ] setup Node
-- [ ] npm install / npm ci
-- [ ] Prisma generate
-- [ ] Prisma validate
-- [ ] lint
-- [ ] typecheck
-- [ ] Jest
-- [ ] Next.js build
+- [x] create `.github/workflows/ci.yml`
+- [x] checkout
+- [x] setup Node
+- [x] npm install / npm ci
+- [x] Prisma generate
+- [x] Prisma validate
+- [x] lint
+- [x] typecheck
+- [x] Jest
+- [x] Next.js build
 
 ## 15.2 Branch Protection
 
-- [ ] CI required on PR
+- [x] CI required on PR
 - [ ] main protected
-- [ ] no direct feature commits to main
+- [x] no direct feature commits to main
 
 ### Stage 15 status
 
-**Current:** Not started
+**Current:** CI complete; GitHub branch protection configuration pending
 
 ---
 
