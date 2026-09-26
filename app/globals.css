@@ -50,6 +50,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background: var(--page);
   color: var(--content);
   font-family: Arial, Helvetica, sans-serif;

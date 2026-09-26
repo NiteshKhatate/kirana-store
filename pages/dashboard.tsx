@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { LoadingState } from "@/components/ui/LoadingState";
 import { useAuth } from "@/features/auth/auth-context";
+import { useDashboardSummary } from "@/features/reports/use-reports";
 
 type CurrentStore = {
   user: { email: string | null; displayName: string | null };
@@ -17,6 +18,7 @@ type CurrentStore = {
 
 export default function DashboardPage() {
   const { session } = useAuth();
+  const summary = useDashboardSummary();
   const [currentStore, setCurrentStore] = useState<CurrentStore | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -54,7 +56,7 @@ export default function DashboardPage() {
           </div>
           {error && <Alert tone="danger">{error}</Alert>}
           {!currentStore && !error && <LoadingState label="Loading your store workspace…" />}
-          {currentStore && <div className="grid gap-4 md:grid-cols-3"><Card className="p-5"><p className="text-sm text-content-muted">Current store</p><p className="mt-2 text-lg font-bold text-content">{currentStore.store.name}</p><Badge className="mt-3" tone="info">{currentStore.membership.role}</Badge></Card><Card className="p-5"><p className="text-sm text-content-muted">Today’s sales</p><p className="mt-2 text-2xl font-bold text-content">—</p><p className="mt-1 text-xs text-content-muted">Sales module coming next</p></Card><Card className="p-5"><p className="text-sm text-content-muted">Inventory alerts</p><p className="mt-2 text-2xl font-bold text-content">—</p><p className="mt-1 text-xs text-content-muted">Inventory module coming next</p></Card></div>}
+          {currentStore && <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-5"><Card className="p-5"><p className="text-sm text-content-muted">Current store</p><p className="mt-2 text-lg font-bold text-content">{currentStore.store.name}</p><Badge className="mt-3" tone="info">{currentStore.membership.role}</Badge></Card><Card className="p-5"><p className="text-sm text-content-muted">Today’s sales</p><p className="mt-2 text-2xl font-bold text-content">₹{summary.data?.todaySales ?? "—"}</p></Card><Card className="p-5"><p className="text-sm text-content-muted">Today’s purchases</p><p className="mt-2 text-2xl font-bold text-content">₹{summary.data?.todayPurchases ?? "—"}</p></Card><Card className="p-5"><p className="text-sm text-content-muted">Outstanding credit</p><p className="mt-2 text-2xl font-bold text-content">₹{summary.data?.outstandingCredit ?? "—"}</p></Card><Card className="p-5"><p className="text-sm text-content-muted">Low-stock items</p><p className="mt-2 text-2xl font-bold text-content">{summary.data?.lowStockCount ?? "—"}</p></Card></div>}
         </div>
       </AppShell>
     </>

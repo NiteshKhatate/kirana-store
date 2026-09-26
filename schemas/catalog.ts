@@ -124,6 +124,8 @@ export const saleListQuerySchema = z.object({ from: z.string().optional(), to: z
 
 export const creditPaymentSchema = z.object({ amount: positiveDecimal(2), paymentMethod: z.enum(["CASH", "UPI", "CARD", "BANK_TRANSFER", "OTHER"]), reference: z.string().trim().max(100).optional(), notes: optionalText });
 export const creditAdjustmentSchema = z.object({ amount: positiveDecimal(2), direction: z.enum(["DEBIT", "CREDIT"]), reference: z.string().trim().max(100).optional(), notes: optionalText });
+export const inventoryListQuerySchema = z.object({ search: z.string().trim().optional(), categoryId: z.string().cuid().optional(), status: z.enum(["LOW", "OUT", "ALL"]).default("ALL"), page: z.coerce.number().int().min(1).default(1), pageSize: z.coerce.number().int().min(1).max(100).default(25) });
+export const inventoryAdjustmentSchema = z.object({ productId: z.string().cuid(), direction: z.enum(["IN", "OUT"]), quantity: positiveDecimal(3), reason: z.string().trim().min(1, "Reason is required").max(200) });
 export type ProductInput = z.infer<typeof productSchema>;
 export type PurchaseInput = z.infer<typeof purchaseSchema>;
 export type CustomerInput = z.infer<typeof customerSchema>;
