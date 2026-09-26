@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 const links = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/products", label: "Products" },
+  { href: "/suppliers", label: "Suppliers" },
   { href: "/purchases", label: "Purchases" },
   { href: "/sales", label: "Sales" },
   { href: "/inventory", label: "Inventory" },

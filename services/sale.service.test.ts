@@ -1,0 +1,2 @@
+import { calculateSale } from "@/services/sale.service";
+describe("sale totals", () => { it("calculates sale totals", () => { expect(calculateSale({ customerId: null, saleNumber: "S-1", paymentMethod: "CASH", amountPaid: "10.00", saleDate: "2026-09-26", notes: "", items: [{ productId: "ckat3g3g3g3g3g3g3g3g3g3g3", quantity: "2", sellPrice: "10.00", discount: "0", taxRate: "5" }] })).toMatchObject({ subtotal: "20.00", tax: "1.00", total: "21.00" }); }); });

@@ -1,0 +1,9 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { creditPaymentSchema, type CreditPaymentInput } from "@/schemas/catalog";
+import { Alert } from "@/components/ui/Alert";
+import { Button } from "@/components/ui/Button";
+import { FormField } from "@/components/ui/FormField";
+import { Input } from "@/components/ui/Input";
+import { Select } from "@/components/ui/Select";
+export function CreditPaymentForm({ isSaving, serverError, onSubmit, onCancel }: { isSaving: boolean; serverError?: string; onSubmit: (values: CreditPaymentInput) => Promise<void>; onCancel: () => void }) { const { register, handleSubmit, formState: { errors } } = useForm<CreditPaymentInput>({ resolver: zodResolver(creditPaymentSchema), defaultValues: { amount: "", paymentMethod: "CASH", reference: "", notes: "" } }); return <form className="space-y-5" onSubmit={(event) => void handleSubmit(onSubmit)(event)}><FormField label="Payment amount" htmlFor="credit-payment-amount" error={errors.amount?.message}><Input id="credit-payment-amount" {...register("amount")} /></FormField><FormField label="Payment method" htmlFor="credit-payment-method"><Select id="credit-payment-method" {...register("paymentMethod")}><option value="CASH">Cash</option><option value="UPI">UPI</option><option value="CARD">Card</option><option value="BANK_TRANSFER">Bank transfer</option><option value="OTHER">Other</option></Select></FormField><FormField label="Reference" htmlFor="credit-payment-reference"><Input id="credit-payment-reference" {...register("reference")} /></FormField>{serverError && <Alert tone="danger">{serverError}</Alert>}<div className="flex justify-end gap-3"><Button type="button" variant="secondary" onClick={onCancel}>Cancel</Button><Button type="submit" disabled={isSaving}>{isSaving ? "Saving…" : "Record payment"}</Button></div></form>; }

@@ -1,0 +1,2 @@
+import { calculatePurchase } from "@/services/purchase.service";
+describe("purchase totals", () => { it("calculates subtotal, discount, tax, and total", () => { expect(calculatePurchase({ supplierId: null, invoiceNumber: "INV-1", purchaseDate: "2026-09-26", notes: "", items: [{ productId: "ckat3g3g3g3g3g3g3g3g3g3g3", quantity: "2", buyPrice: "10.00", mrpAtPurchase: "12.00", discount: "1.00", taxRate: "5" }] })).toMatchObject({ subtotal: "20.00", discount: "1.00", tax: "0.95", total: "19.95" }); }); });
