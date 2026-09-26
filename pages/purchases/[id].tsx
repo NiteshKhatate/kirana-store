@@ -1,0 +1,9 @@
+import { useRouter } from "next/router";
+import Head from "next/head";
+import { AppShell } from "@/components/layout/AppShell";
+import { Card } from "@/components/ui/Card";
+import { ErrorState } from "@/components/ui/ErrorState";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { Table } from "@/components/ui/Table";
+import { usePurchase } from "@/features/purchases/use-purchases";
+export default function PurchaseDetailPage() { const router = useRouter(); const id = typeof router.query.id === "string" ? router.query.id : undefined; const purchase = usePurchase(id); return <><Head><title>Purchase detail | Kirana Store Manager</title></Head><AppShell title="Purchase detail"><div className="space-y-6">{purchase.isPending && <LoadingState label="Loading purchase…" />}{purchase.isError && <ErrorState message={purchase.error.message} onRetry={() => void purchase.refetch()} />}{purchase.data && <><div><h2 className="text-2xl font-bold text-content">Purchase {purchase.data.invoiceNumber || purchase.data.id}</h2><p className="mt-1 text-sm text-content-muted">{purchase.data.supplier?.name || "Walk-in supplier"} · {new Date(purchase.data.purchaseDate).toLocaleDateString()}</p></div><Card className="p-5"><p className="text-sm text-content-muted">Total</p><p className="mt-2 text-3xl font-bold text-content">₹{purchase.data.total}</p></Card><Card className="overflow-hidden"><Table rows={purchase.data.items ?? []} getRowKey={(row) => row.id} columns={[{ key: "product", header: "Product", render: (row) => row.product?.name || row.productId }, { key: "quantity", header: "Quantity", render: (row) => row.quantity }, { key: "price", header: "Buy price", render: (row) => `₹${row.buyPrice}` }, { key: "total", header: "Line total", render: (row) => `₹${row.lineTotal}` }]} /></Card></>}</div></AppShell></>; }

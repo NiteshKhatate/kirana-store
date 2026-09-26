@@ -1,0 +1,2 @@
+import { customerSchema, purchaseSchema, saleSchema } from "@/schemas/catalog";
+describe("transaction schemas", () => { it("requires purchase and sale lines", () => { expect(purchaseSchema.safeParse({ purchaseDate: "2026-09-26", items: [] }).success).toBe(false); expect(saleSchema.safeParse({ saleNumber: "S-1", saleDate: "2026-09-26", amountPaid: "0", items: [] }).success).toBe(false); }); it("validates customer name", () => { expect(customerSchema.safeParse({ name: "", openingCredit: "0", isActive: true }).success).toBe(false); }); });

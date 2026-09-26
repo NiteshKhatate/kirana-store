@@ -1,0 +1,10 @@
+import { useRouter } from "next/router";
+import Head from "next/head";
+import { AppShell } from "@/components/layout/AppShell";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
+import { ErrorState } from "@/components/ui/ErrorState";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { Table } from "@/components/ui/Table";
+import { useSale } from "@/features/sales/use-sales";
+export default function SaleDetailPage() { const router = useRouter(); const id = typeof router.query.id === "string" ? router.query.id : undefined; const sale = useSale(id); return <><Head><title>Sale detail | Kirana Store Manager</title></Head><AppShell title="Sale detail"><div className="space-y-6">{sale.isPending && <LoadingState label="Loading sale…" />}{sale.isError && <ErrorState message={sale.error.message} onRetry={() => void sale.refetch()} />}{sale.data && <><div><div className="flex items-center gap-3"><h2 className="text-2xl font-bold text-content">Sale {sale.data.saleNumber}</h2><Badge tone={sale.data.paymentStatus === "PAID" ? "success" : "warning"}>{sale.data.paymentStatus}</Badge></div><p className="mt-1 text-sm text-content-muted">{sale.data.customer?.name || "Walk-in customer"} · {new Date(sale.data.saleDate).toLocaleDateString()}</p></div><Card className="p-5"><p className="text-sm text-content-muted">Total</p><p className="mt-2 text-3xl font-bold text-content">₹{sale.data.total}</p><p className="mt-1 text-sm text-content-muted">Paid ₹{sale.data.amountPaid}</p></Card><Card className="overflow-hidden"><Table rows={sale.data.items ?? []} getRowKey={(row) => row.id} columns={[{ key: "product", header: "Product", render: (row) => row.product?.name || row.productId }, { key: "quantity", header: "Quantity", render: (row) => row.quantity }, { key: "price", header: "Sell price", render: (row) => `₹${row.sellPrice}` }, { key: "total", header: "Line total", render: (row) => `₹${row.lineTotal}` }]} /></Card></>}</div></AppShell></>; }

@@ -349,28 +349,28 @@ Define semantic color names:
 
 ## 6.1 Supplier API
 
-- [ ] list suppliers
-- [ ] create supplier
-- [ ] update supplier
-- [ ] get supplier
+- [x] list suppliers
+- [x] create supplier
+- [x] update supplier
+- [x] get supplier
 
 ## 6.2 Supplier UI
 
-- [ ] supplier list
-- [ ] supplier search
-- [ ] create supplier
-- [ ] edit supplier
-- [ ] loading/error/empty states
+- [x] supplier list
+- [x] supplier search
+- [x] create supplier
+- [x] edit supplier
+- [x] loading/error/empty states
 
 ## 6.3 Supplier Tests
 
-- [ ] validation
-- [ ] API
-- [ ] store isolation
+- [x] validation
+- [x] API
+- [x] store isolation
 
 ### Stage 6 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -378,56 +378,56 @@ Define semantic color names:
 
 ## 7.1 Purchase Form
 
-- [ ] select supplier
-- [ ] invoice number
-- [ ] purchase date
-- [ ] add multiple products
-- [ ] quantity
-- [ ] buying price
-- [ ] MRP snapshot
-- [ ] discount
-- [ ] tax
-- [ ] notes
-- [ ] totals
+- [x] select supplier
+- [x] invoice number
+- [x] purchase date
+- [x] add multiple products
+- [x] quantity
+- [x] buying price
+- [x] MRP snapshot
+- [x] discount
+- [x] tax
+- [x] notes
+- [x] totals
 
 ## 7.2 Purchase Service
 
 Single transaction must:
 
-- [ ] create Purchase
-- [ ] create PurchaseItem rows
-- [ ] create positive InventoryMovement rows
-- [ ] update InventoryBalance
-- [ ] rollback if any step fails
+- [x] create Purchase
+- [x] create PurchaseItem rows
+- [x] create positive InventoryMovement rows
+- [x] update InventoryBalance
+- [x] rollback if any step fails
 
 ## 7.3 Purchase API
 
-- [ ] create purchase
-- [ ] list purchases
-- [ ] purchase detail
-- [ ] date filters
-- [ ] supplier filter
+- [x] create purchase
+- [x] list purchases
+- [x] purchase detail
+- [x] date filters
+- [x] supplier filter
 
 ## 7.4 Purchase UI
 
-- [ ] purchases list
-- [ ] create purchase
-- [ ] purchase detail
-- [ ] filters
-- [ ] loading/error/empty states
+- [x] purchases list
+- [x] create purchase
+- [x] purchase detail
+- [x] filters
+- [x] loading/error/empty states
 
 ## 7.5 Purchase Tests
 
-- [ ] total calculation
-- [ ] inventory increment
-- [ ] multiple line items
-- [ ] rollback test
-- [ ] unauthorized access
-- [ ] cross-store access
+- [x] total calculation
+- [x] inventory increment
+- [x] multiple line items
+- [x] rollback test
+- [x] unauthorized access
+- [x] cross-store access
 
 ### Stage 7 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -435,38 +435,38 @@ Single transaction must:
 
 ## 8.1 Customer API
 
-- [ ] list customers
-- [ ] create customer
-- [ ] edit customer
-- [ ] customer detail
+- [x] list customers
+- [x] create customer
+- [x] edit customer
+- [x] customer detail
 
 ## 8.2 Customer Fields
 
-- [ ] name
-- [ ] phone
-- [ ] address
-- [ ] credit limit
-- [ ] opening credit
-- [ ] active status
+- [x] name
+- [x] phone
+- [x] address
+- [x] credit limit
+- [x] opening credit
+- [x] active status
 
 ## 8.3 Customer UI
 
-- [ ] customer list
-- [ ] search
-- [ ] create customer
-- [ ] edit customer
-- [ ] customer detail
-- [ ] outstanding credit display
+- [x] customer list
+- [x] search
+- [x] create customer
+- [x] edit customer
+- [x] customer detail
+- [x] outstanding credit display
 
 ## 8.4 Customer Tests
 
-- [ ] validation
-- [ ] API
-- [ ] store isolation
+- [x] validation
+- [x] API
+- [x] store isolation
 
 ### Stage 8 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -474,62 +474,62 @@ Single transaction must:
 
 ## 9.1 Sale Form
 
-- [ ] walk-in sale
-- [ ] regular customer sale
-- [ ] product selection
-- [ ] quantity
-- [ ] selling price
-- [ ] discount
-- [ ] tax
-- [ ] payment method
-- [ ] amount paid
-- [ ] notes
-- [ ] totals
+- [x] walk-in sale
+- [x] regular customer sale
+- [x] product selection
+- [x] quantity
+- [x] selling price
+- [x] discount
+- [x] tax
+- [x] payment method
+- [x] amount paid
+- [x] notes
+- [x] totals
 
 ## 9.2 Sale Validation
 
-- [ ] product belongs to store
-- [ ] quantity > 0
-- [ ] selling price >= 0
-- [ ] amount paid >= 0
-- [ ] amount paid <= total
-- [ ] credit requires customer
-- [ ] sufficient stock required
+- [x] product belongs to store
+- [x] quantity > 0
+- [x] selling price >= 0
+- [x] amount paid >= 0
+- [x] amount paid <= total
+- [x] credit requires customer
+- [x] sufficient stock required
 
 ## 9.3 Sale Transaction
 
 Single transaction must:
 
-- [ ] verify stock
-- [ ] create Sale
-- [ ] create SaleItem rows
-- [ ] create negative InventoryMovement rows
-- [ ] decrement InventoryBalance
-- [ ] create CreditLedgerEntry when needed
-- [ ] rollback everything on error
+- [x] verify stock
+- [x] create Sale
+- [x] create SaleItem rows
+- [x] create negative InventoryMovement rows
+- [x] decrement InventoryBalance
+- [x] create CreditLedgerEntry when needed
+- [x] rollback everything on error
 
 ## 9.4 Sale UI
 
-- [ ] sales list
-- [ ] create sale
-- [ ] sale detail
-- [ ] paid/credit indicator
-- [ ] filters
-- [ ] loading/error/empty states
+- [x] sales list
+- [x] create sale
+- [x] sale detail
+- [x] paid/credit indicator
+- [x] filters
+- [x] loading/error/empty states
 
 ## 9.5 Sale Tests
 
-- [ ] total calculation
-- [ ] stock decrement
-- [ ] insufficient stock rejection
-- [ ] partial payment
-- [ ] full credit sale
-- [ ] rollback
-- [ ] authorization
+- [x] total calculation
+- [x] stock decrement
+- [x] insufficient stock rejection
+- [x] partial payment
+- [x] full credit sale
+- [x] rollback
+- [x] authorization
 
 ### Stage 9 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
@@ -537,48 +537,48 @@ Single transaction must:
 
 ## 10.1 Credit Ledger
 
-- [ ] calculate outstanding balance
-- [ ] show credit-sale entries
-- [ ] show payments
-- [ ] show adjustments
+- [x] calculate outstanding balance
+- [x] show credit-sale entries
+- [x] show payments
+- [x] show adjustments
 
 ## 10.2 Credit Payment
 
-- [ ] create payment form
-- [ ] payment amount
-- [ ] payment method
-- [ ] reference
-- [ ] notes
-- [ ] validate amount
-- [ ] create negative ledger entry
+- [x] create payment form
+- [x] payment amount
+- [x] payment method
+- [x] reference
+- [x] notes
+- [x] validate amount
+- [x] create negative ledger entry
 
 ## 10.3 Credit Rules
 
-- [ ] require customer for credit sale
-- [ ] respect credit limit
-- [ ] opening credit included
-- [ ] payment reduces outstanding
-- [ ] historical sales remain unchanged
+- [x] require customer for credit sale
+- [x] respect credit limit
+- [x] opening credit included
+- [x] payment reduces outstanding
+- [x] historical sales remain unchanged
 
 ## 10.4 Credit UI
 
-- [ ] customer credit page
-- [ ] current outstanding
-- [ ] ledger history
-- [ ] payment action
-- [ ] date filters
+- [x] customer credit page
+- [x] current outstanding
+- [x] ledger history
+- [x] payment action
+- [x] date filters
 
 ## 10.5 Credit Tests
 
-- [ ] credit sale test
-- [ ] repayment test
-- [ ] outstanding calculation
-- [ ] credit limit test
-- [ ] adjustment test
+- [x] credit sale test
+- [x] repayment test
+- [x] outstanding calculation
+- [x] credit limit test
+- [x] adjustment test
 
 ### Stage 10 status
 
-**Current:** Not started
+**Current:** Complete
 
 ---
 
