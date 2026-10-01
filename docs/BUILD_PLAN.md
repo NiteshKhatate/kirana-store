@@ -821,23 +821,23 @@ Every major screen must have:
 
 ## 17.2 Production Verification
 
-- [ ] login
-- [ ] create category
-- [ ] create product
-- [ ] create supplier
-- [ ] record purchase
-- [ ] verify stock
-- [ ] create customer
-- [ ] record credit sale
-- [ ] verify stock reduction
-- [ ] record repayment
-- [ ] verify outstanding credit
-- [ ] verify reports
-- [ ] verify mobile layout
+- [x] login
+- [x] create category
+- [x] create product
+- [x] create supplier
+- [x] record purchase
+- [x] verify stock
+- [x] create customer
+- [x] record credit sale
+- [x] verify stock reduction
+- [x] record repayment
+- [x] verify outstanding credit
+- [x] verify reports
+- [x] verify mobile layout
 
 ### Stage 17 status
 
-**Current:** Render deployment complete; production end-to-end verification pending
+**Current:** Complete
 
 ---
 
@@ -851,12 +851,12 @@ Every major screen must have:
 - [x] document deployment
 - [x] document known limitations
 - [x] record Phase 2 backlog
-- [ ] final Phase 1 demo
+- [x] final Phase 1 demo
 - [ ] tag/release Phase 1
 
 ### Stage 18 status
 
-**Current:** Documentation complete; release/demo actions pending
+**Current:** Phase 1 demo complete; tag/release pending
 
 ---
 
@@ -884,10 +884,10 @@ Phase 1 is not complete until all of these are done:
 - [x] credit report works
 - [x] tests pass
 - [x] CI passes (workflow configured)
-- [ ] Docker build works (Docker daemon unavailable in current environment)
-- [ ] Render deployment works
-- [ ] desktop UI checked
-- [ ] mobile UI checked
+- [x] Docker build works
+- [x] Render deployment works
+- [x] desktop UI checked
+- [x] mobile UI checked
 
 ---
 
