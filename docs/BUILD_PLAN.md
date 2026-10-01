@@ -903,6 +903,7 @@ Keep these out of Phase 1 unless explicitly promoted:
 - [ ] batch tracking
 - [ ] expiry tracking
 - [ ] purchase orders
+- [ ] multi-user store membership and role-based permissions
 - [ ] multi-branch support
 - [ ] stock transfers
 - [ ] WhatsApp/SMS
@@ -919,7 +920,21 @@ Phase 2 begins after the Phase 1 release `v1.0.0-phase1`. The original
 deferred backlog above is preserved as the scope list; the stages below define
 the implementation order and completion criteria for those features.
 
-## Stage 19 — Returns and Transaction Corrections
+## Stage 19 — Multi-User Store Membership and Roles
+
+- [ ] add store member invitation and onboarding workflow
+- [ ] allow an owner or authorized admin to add users to an existing store
+- [ ] support member list, role changes, and deactivation
+- [ ] enforce OWNER, ADMIN, and STAFF permissions server-side
+- [ ] define seller permissions for sales, customers, and inventory visibility
+- [ ] prevent staff from changing store membership or privileged settings
+- [ ] add membership and role-management UI
+- [ ] add authorization, cross-store isolation, and audit tests
+
+### Stage 19 status
+
+**Current:** Not started
+## Stage 20 — Returns and Transaction Corrections
 
 - [ ] define sale-return and purchase-return workflows
 - [ ] add return validation and authorization
@@ -928,11 +943,11 @@ the implementation order and completion criteria for those features.
 - [ ] preserve original transaction snapshots and audit history
 - [ ] add return APIs, UI, reports, and tests
 
-### Stage 19 status
+### Stage 20 status
 
 **Current:** Not started
 
-## Stage 20 — Supplier Payable Ledger
+## Stage 21 — Supplier Payable Ledger
 
 - [ ] add supplier payable ledger model and entries
 - [ ] record payable on credit purchases
@@ -941,11 +956,11 @@ the implementation order and completion criteria for those features.
 - [ ] add supplier ledger UI and reports
 - [ ] add authorization, validation, transaction, and API tests
 
-### Stage 20 status
+### Stage 21 status
 
 **Current:** Not started
 
-## Stage 21 — GST and Invoice Compliance
+## Stage 22 — GST and Invoice Compliance
 
 - [ ] define store GST configuration and tax rules
 - [ ] support GST-compliant invoice data and numbering
@@ -954,11 +969,11 @@ the implementation order and completion criteria for those features.
 - [ ] validate invoice requirements server-side
 - [ ] add compliance-focused tests and documentation
 
-### Stage 21 status
+### Stage 22 status
 
 **Current:** Not started
 
-## Stage 22 — Barcode, Batch, and Expiry Tracking
+## Stage 23 — Barcode, Batch, and Expiry Tracking
 
 - [ ] support barcode capture and lookup workflows
 - [ ] add barcode hardware integration where supported
@@ -967,11 +982,11 @@ the implementation order and completion criteria for those features.
 - [ ] enforce batch-aware stock movements and returns
 - [ ] add expiry, batch, and barcode tests
 
-### Stage 22 status
+### Stage 23 status
 
 **Current:** Not started
 
-## Stage 23 — Purchase Orders
+## Stage 24 — Purchase Orders
 
 - [ ] create and manage purchase orders
 - [ ] support draft, submitted, partially received, and completed states
@@ -979,11 +994,11 @@ the implementation order and completion criteria for those features.
 - [ ] track ordered, received, and remaining quantities
 - [ ] add purchase-order APIs, UI, reports, and tests
 
-### Stage 23 status
+### Stage 24 status
 
 **Current:** Not started
 
-## Stage 24 — Multi-Branch and Stock Transfers
+## Stage 25 — Multi-Branch and Stock Transfers
 
 - [ ] add branch and branch-membership models
 - [ ] scope authorization by branch and store hierarchy
@@ -992,11 +1007,11 @@ the implementation order and completion criteria for those features.
 - [ ] add branch inventory views and reports
 - [ ] add cross-branch authorization and concurrency tests
 
-### Stage 24 status
+### Stage 25 status
 
 **Current:** Not started
 
-## Stage 25 — Customer Engagement
+## Stage 26 — Customer Engagement
 
 - [ ] define WhatsApp/SMS notification preferences and consent
 - [ ] add transactional messaging workflows
@@ -1004,11 +1019,11 @@ the implementation order and completion criteria for those features.
 - [ ] add loyalty earning, redemption, and adjustment ledger entries
 - [ ] add customer engagement UI, reports, and tests
 
-### Stage 25 status
+### Stage 26 status
 
 **Current:** Not started
 
-## Stage 26 — Offline-First Operations
+## Stage 27 — Offline-First Operations
 
 - [ ] define offline-supported workflows and conflict rules
 - [ ] add local persistence and queued mutations
@@ -1016,11 +1031,11 @@ the implementation order and completion criteria for those features.
 - [ ] protect against duplicate sales and inventory movements
 - [ ] add offline and reconnection tests
 
-### Stage 26 status
+### Stage 27 status
 
 **Current:** Not started
 
-## Stage 27 — Advanced Accounting
+## Stage 28 — Advanced Accounting
 
 - [ ] define accounting scope and chart-of-accounts boundaries
 - [ ] map purchases, sales, payments, credit, and adjustments
@@ -1029,11 +1044,11 @@ the implementation order and completion criteria for those features.
 - [ ] add reconciliation and period-close controls
 - [ ] add accounting authorization and correctness tests
 
-### Stage 27 status
+### Stage 28 status
 
 **Current:** Not started
 
-## Stage 28 — Forecasting
+## Stage 29 — Forecasting
 
 - [ ] define forecast inputs, horizons, and accuracy metrics
 - [ ] add demand and reorder projections
@@ -1041,11 +1056,11 @@ the implementation order and completion criteria for those features.
 - [ ] keep forecast outputs separate from stock and financial truth
 - [ ] add forecast reports, controls, and tests
 
-### Stage 28 status
+### Stage 29 status
 
 **Current:** Not started
 
-## Stage 30 — Phase 2 Hardening and Release
+## Stage 31 — Phase 2 Hardening and Release
 
 - [ ] complete security and authorization review
 - [ ] complete migration and rollback review
@@ -1056,6 +1071,6 @@ the implementation order and completion criteria for those features.
 - [ ] run Phase 2 demo and release checklist
 - [ ] tag and release Phase 2
 
-### Stage 30 status
+### Stage 31 status
 
 **Current:** Not started
