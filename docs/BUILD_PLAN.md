@@ -910,7 +910,6 @@ Keep these out of Phase 1 unless explicitly promoted:
 - [ ] offline-first support
 - [ ] advanced accounting
 - [ ] forecasting
-- [ ] AI features
 
 ---
 
@@ -1043,18 +1042,6 @@ the implementation order and completion criteria for those features.
 - [ ] add forecast reports, controls, and tests
 
 ### Stage 28 status
-
-**Current:** Not started
-
-## Stage 29 — AI-Assisted Features
-
-- [ ] define approved AI use cases and data boundaries
-- [ ] add privacy, redaction, and permission controls
-- [ ] add human review for AI-generated recommendations
-- [ ] keep AI outputs advisory and non-authoritative
-- [ ] add usage monitoring, failure handling, and evaluation tests
-
-### Stage 29 status
 
 **Current:** Not started
 
