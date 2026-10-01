@@ -911,3 +911,164 @@ Keep these out of Phase 1 unless explicitly promoted:
 - [ ] advanced accounting
 - [ ] forecasting
 - [ ] AI features
+
+---
+
+# Phase 2 Build Plan
+
+Phase 2 begins after the Phase 1 release `v1.0.0-phase1`. The original
+deferred backlog above is preserved as the scope list; the stages below define
+the implementation order and completion criteria for those features.
+
+## Stage 19 — Returns and Transaction Corrections
+
+- [ ] define sale-return and purchase-return workflows
+- [ ] add return validation and authorization
+- [ ] restore or remove inventory atomically
+- [ ] reverse or adjust customer credit atomically
+- [ ] preserve original transaction snapshots and audit history
+- [ ] add return APIs, UI, reports, and tests
+
+### Stage 19 status
+
+**Current:** Not started
+
+## Stage 20 — Supplier Payable Ledger
+
+- [ ] add supplier payable ledger model and entries
+- [ ] record payable on credit purchases
+- [ ] record supplier payments and adjustments
+- [ ] calculate supplier outstanding balances
+- [ ] add supplier ledger UI and reports
+- [ ] add authorization, validation, transaction, and API tests
+
+### Stage 20 status
+
+**Current:** Not started
+
+## Stage 21 — GST and Invoice Compliance
+
+- [ ] define store GST configuration and tax rules
+- [ ] support GST-compliant invoice data and numbering
+- [ ] preserve tax snapshots on purchases and sales
+- [ ] add GST summaries and exportable reports
+- [ ] validate invoice requirements server-side
+- [ ] add compliance-focused tests and documentation
+
+### Stage 21 status
+
+**Current:** Not started
+
+## Stage 22 — Barcode, Batch, and Expiry Tracking
+
+- [ ] support barcode capture and lookup workflows
+- [ ] add barcode hardware integration where supported
+- [ ] add batch and lot tracking
+- [ ] add expiry dates and near-expiry views
+- [ ] enforce batch-aware stock movements and returns
+- [ ] add expiry, batch, and barcode tests
+
+### Stage 22 status
+
+**Current:** Not started
+
+## Stage 23 — Purchase Orders
+
+- [ ] create and manage purchase orders
+- [ ] support draft, submitted, partially received, and completed states
+- [ ] convert purchase orders into purchases
+- [ ] track ordered, received, and remaining quantities
+- [ ] add purchase-order APIs, UI, reports, and tests
+
+### Stage 23 status
+
+**Current:** Not started
+
+## Stage 24 — Multi-Branch and Stock Transfers
+
+- [ ] add branch and branch-membership models
+- [ ] scope authorization by branch and store hierarchy
+- [ ] create stock-transfer requests and approvals
+- [ ] record transfer-out and transfer-in movements atomically
+- [ ] add branch inventory views and reports
+- [ ] add cross-branch authorization and concurrency tests
+
+### Stage 24 status
+
+**Current:** Not started
+
+## Stage 25 — Customer Engagement
+
+- [ ] define WhatsApp/SMS notification preferences and consent
+- [ ] add transactional messaging workflows
+- [ ] add loyalty accounts and points rules
+- [ ] add loyalty earning, redemption, and adjustment ledger entries
+- [ ] add customer engagement UI, reports, and tests
+
+### Stage 25 status
+
+**Current:** Not started
+
+## Stage 26 — Offline-First Operations
+
+- [ ] define offline-supported workflows and conflict rules
+- [ ] add local persistence and queued mutations
+- [ ] add sync state, retry, and conflict-resolution UI
+- [ ] protect against duplicate sales and inventory movements
+- [ ] add offline and reconnection tests
+
+### Stage 26 status
+
+**Current:** Not started
+
+## Stage 27 — Advanced Accounting
+
+- [ ] define accounting scope and chart-of-accounts boundaries
+- [ ] map purchases, sales, payments, credit, and adjustments
+- [ ] add accounting journal entries and audit history
+- [ ] add accounting reports and export workflows
+- [ ] add reconciliation and period-close controls
+- [ ] add accounting authorization and correctness tests
+
+### Stage 27 status
+
+**Current:** Not started
+
+## Stage 28 — Forecasting
+
+- [ ] define forecast inputs, horizons, and accuracy metrics
+- [ ] add demand and reorder projections
+- [ ] show confidence, assumptions, and data freshness
+- [ ] keep forecast outputs separate from stock and financial truth
+- [ ] add forecast reports, controls, and tests
+
+### Stage 28 status
+
+**Current:** Not started
+
+## Stage 29 — AI-Assisted Features
+
+- [ ] define approved AI use cases and data boundaries
+- [ ] add privacy, redaction, and permission controls
+- [ ] add human review for AI-generated recommendations
+- [ ] keep AI outputs advisory and non-authoritative
+- [ ] add usage monitoring, failure handling, and evaluation tests
+
+### Stage 29 status
+
+**Current:** Not started
+
+## Stage 30 — Phase 2 Hardening and Release
+
+- [ ] complete security and authorization review
+- [ ] complete migration and rollback review
+- [ ] complete performance and concurrency testing
+- [ ] complete desktop and mobile UX verification
+- [ ] complete CI, Docker, and Render verification
+- [ ] update documentation and Phase 3 backlog
+- [ ] run Phase 2 demo and release checklist
+- [ ] tag and release Phase 2
+
+### Stage 30 status
+
+**Current:** Not started
