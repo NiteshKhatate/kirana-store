@@ -852,11 +852,11 @@ Every major screen must have:
 - [x] document known limitations
 - [x] record Phase 2 backlog
 - [x] final Phase 1 demo
-- [ ] tag/release Phase 1
+- [x] tag/release Phase 1
 
 ### Stage 18 status
 
-**Current:** Phase 1 demo complete; tag/release pending
+**Current:** Complete
 
 ---
 
