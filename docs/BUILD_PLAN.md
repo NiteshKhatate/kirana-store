@@ -813,11 +813,11 @@ Every major screen must have:
 
 ## 17.1 Render Setup
 
-- [ ] connect GitHub repository
+- [x] connect GitHub repository
 - [x] create Docker Web Service manifest
 - [x] configure environment variables manifest
 - [x] configure health check
-- [ ] deploy
+- [x] deploy
 
 ## 17.2 Production Verification
 
@@ -837,7 +837,7 @@ Every major screen must have:
 
 ### Stage 17 status
 
-**Current:** Render configuration complete; account deployment pending
+**Current:** Render deployment complete; production end-to-end verification pending
 
 ---
 
