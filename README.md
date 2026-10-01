@@ -37,11 +37,11 @@ npm run build
 
 ## Docker and Render
 
-The production image uses Next.js standalone output and runs as a non-root user on port 3000:
+The production image uses Next.js standalone output, binds to `0.0.0.0`, uses Render's `$PORT` (default 10000), and runs as a non-root user locally on port 3000:
 
 ```bash
 docker build --build-arg NEXT_PUBLIC_SUPABASE_URL=... --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=... -t kirana-store .
-docker run --rm -p 3000:3000 --env-file .env kirana-store
+docker run --rm -e PORT=3000 -p 3000:3000 --env-file .env kirana-store
 ```
 
 Render can deploy the repository using `render.yaml`. Configure the environment variables in Render, use `/api/health` as the health check, and verify login plus the Phase 1 smoke flow after deployment.

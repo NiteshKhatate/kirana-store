@@ -23,4 +23,4 @@ If the default branch is later renamed to `main`, apply the same rules to `main`
 
 ## Runtime verification
 
-Docker verification requires a running Docker daemon. The image is configured to expose port 3000, run Next standalone output, receive secrets at runtime, and run as the non-root `nextjs` user.
+Docker verification requires a running Docker daemon. The image runs Next standalone on Render's `$PORT` (default 10000), binds to `0.0.0.0`, receives secrets at runtime, and runs as the non-root `nextjs` user.
