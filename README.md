@@ -1,10 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kirana Store Manager
+
+Phase 1 store operations app built with Next.js Pages Router, Prisma, Supabase Postgres/Auth, React Query, Zod, and Tailwind CSS.
 
 ## Database setup
 
 Set `DATABASE_URL` to the PostgreSQL connection string from Supabase's **Connect** dialog. For the pooler, use the exact region-specific host supplied there (for example, `aws-0-ap-south-1.pooler.supabase.com`); do not leave `aws-X-REGION.pooler.supabase.com` in the value. The app also recognizes that placeholder and falls back to the project's direct Supabase database host for local development.
 
 ## Getting Started
+
+Install Node.js 20+, copy `.env.example` to `.env`, provide the Supabase values, then run `npm ci`. For an existing Supabase schema, use `npx prisma db pull` followed by `npx prisma generate`.
 
 First, run the development server:
 
@@ -19,6 +23,32 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Required environment variables are `DATABASE_URL`, `DIRECT_URL`, `NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Never commit `.env` or Supabase secret keys.
+
+## Quality checks
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm test -- --runInBand
+npm run build
+```
+
+## Docker and Render
+
+The production image uses Next.js standalone output and runs as a non-root user on port 3000:
+
+```bash
+docker build --build-arg NEXT_PUBLIC_SUPABASE_URL=... --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=... -t kirana-store .
+docker run --rm -p 3000:3000 --env-file .env kirana-store
+```
+
+Render can deploy the repository using `render.yaml`. Configure the environment variables in Render, use `/api/health` as the health check, and verify login plus the Phase 1 smoke flow after deployment.
+
+## Known Phase 1 limitations
+
+Returns, supplier payable ledgers, GST filing, batch/expiry tracking, purchase orders, transfers, messaging, loyalty, offline mode, advanced accounting, forecasting, and AI features remain deferred to Phase 2.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

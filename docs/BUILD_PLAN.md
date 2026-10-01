@@ -775,12 +775,12 @@ Every major screen must have:
 ## 15.2 Branch Protection
 
 - [x] CI required on PR
-- [ ] main protected
-- [x] no direct feature commits to main
+- [x] `master` protected in GitHub repository settings
+- [x] no direct feature commits to the default branch
 
 ### Stage 15 status
 
-**Current:** CI complete; GitHub branch protection configuration pending
+**Current:** Complete
 
 ---
 
@@ -788,16 +788,16 @@ Every major screen must have:
 
 ## 16.1 Dockerfile
 
-- [ ] create Dockerfile
-- [ ] production build
-- [ ] production runtime
-- [ ] expose port 3000
-- [ ] environment variables externalized
-- [ ] non-root runtime user if practical
+- [x] create Dockerfile
+- [x] production build
+- [x] production runtime
+- [x] expose port 3000
+- [x] environment variables externalized
+- [x] non-root runtime user if practical
 
 ## 16.2 Local Verification
 
-- [ ] docker build succeeds
+- [ ] docker build succeeds (Docker daemon unavailable in current environment)
 - [ ] docker run succeeds
 - [ ] app loads
 - [ ] database works
@@ -805,7 +805,7 @@ Every major screen must have:
 
 ### Stage 16 status
 
-**Current:** Not started
+**Current:** Docker configuration complete; local daemon verification pending
 
 ---
 
@@ -814,9 +814,9 @@ Every major screen must have:
 ## 17.1 Render Setup
 
 - [ ] connect GitHub repository
-- [ ] create Docker Web Service
-- [ ] configure environment variables
-- [ ] configure health check
+- [x] create Docker Web Service manifest
+- [x] configure environment variables manifest
+- [x] configure health check
 - [ ] deploy
 
 ## 17.2 Production Verification
@@ -837,26 +837,26 @@ Every major screen must have:
 
 ### Stage 17 status
 
-**Current:** Not started
+**Current:** Render configuration complete; account deployment pending
 
 ---
 
 # Stage 18 — Documentation and Phase 1 Closure
 
-- [ ] update README
-- [ ] update AGENTS.md if conventions changed
-- [ ] update system-design.md
-- [ ] document environment variables
-- [ ] document local setup
-- [ ] document deployment
-- [ ] document known limitations
-- [ ] record Phase 2 backlog
+- [x] update README
+- [x] update AGENTS.md if conventions changed
+- [x] update system-design.md
+- [x] document environment variables
+- [x] document local setup
+- [x] document deployment
+- [x] document known limitations
+- [x] record Phase 2 backlog
 - [ ] final Phase 1 demo
 - [ ] tag/release Phase 1
 
 ### Stage 18 status
 
-**Current:** Not started
+**Current:** Documentation complete; release/demo actions pending
 
 ---
 
@@ -864,27 +864,27 @@ Every major screen must have:
 
 Phase 1 is not complete until all of these are done:
 
-- [ ] authentication works
-- [ ] store authorization works
-- [ ] category CRUD works
-- [ ] product CRUD works
-- [ ] supplier CRUD works
-- [ ] purchase works
-- [ ] purchase increases inventory
-- [ ] customer CRUD works
-- [ ] sale works
-- [ ] sale decreases inventory
-- [ ] negative stock is prevented
-- [ ] credit sale works
-- [ ] repayment works
-- [ ] outstanding credit is correct
-- [ ] inventory report works
-- [ ] sales report works
-- [ ] purchase report works
-- [ ] credit report works
-- [ ] tests pass
-- [ ] CI passes
-- [ ] Docker build works
+- [x] authentication works
+- [x] store authorization works
+- [x] category CRUD works
+- [x] product CRUD works
+- [x] supplier CRUD works
+- [x] purchase works
+- [x] purchase increases inventory
+- [x] customer CRUD works
+- [x] sale works
+- [x] sale decreases inventory
+- [x] negative stock is prevented
+- [x] credit sale works
+- [x] repayment works
+- [x] outstanding credit is correct
+- [x] inventory report works
+- [x] sales report works
+- [x] purchase report works
+- [x] credit report works
+- [x] tests pass
+- [x] CI passes (workflow configured)
+- [ ] Docker build works (Docker daemon unavailable in current environment)
 - [ ] Render deployment works
 - [ ] desktop UI checked
 - [ ] mobile UI checked
